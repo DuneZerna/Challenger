@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		024E957D238D537800DC2E9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E957C238D537800DC2E9B /* AppDelegate.swift */; };
 		024E957F238D537800DC2E9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E957E238D537800DC2E9B /* SceneDelegate.swift */; };
-		024E9581238D537800DC2E9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E9580238D537800DC2E9B /* ViewController.swift */; };
+		024E9581238D537800DC2E9B /*    ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E9580238D537800DC2E9B /*    ChallengeViewController.swift */; };
 		024E9584238D537800DC2E9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024E9582238D537800DC2E9B /* Main.storyboard */; };
 		024E9586238D537C00DC2E9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 024E9585238D537C00DC2E9B /* Assets.xcassets */; };
 		024E9589238D537C00DC2E9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024E9587238D537C00DC2E9B /* LaunchScreen.storyboard */; };
@@ -18,7 +18,6 @@
 		024E9596238D54A500DC2E9B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E9595238D54A500DC2E9B /* Constants.swift */; };
 		024E9598238D54D600DC2E9B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E9597238D54D600DC2E9B /* Extensions.swift */; };
 		024E959A238D557D00DC2E9B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E9599238D557D00DC2E9B /* MenuViewController.swift */; };
-		024E959D238D590100DC2E9B /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E959C238D590100DC2E9B /* ChallengeViewController.swift */; };
 		024E959F238D5A7800DC2E9B /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E959E238D5A7800DC2E9B /* CollectionViewController.swift */; };
 		024E95A1238D5AFE00DC2E9B /* HistorieTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E95A0238D5AFE00DC2E9B /* HistorieTableCell.swift */; };
 		024E95A3238D5B5D00DC2E9B /* HistoryOnrolledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E95A2238D5B5D00DC2E9B /* HistoryOnrolledViewController.swift */; };
@@ -31,7 +30,7 @@
 		024E9579238D537800DC2E9B /* Challenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		024E957C238D537800DC2E9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		024E957E238D537800DC2E9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		024E9580238D537800DC2E9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		024E9580238D537800DC2E9B /*    ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "   ChallengeViewController.swift"; sourceTree = "<group>"; };
 		024E9583238D537800DC2E9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		024E9585238D537C00DC2E9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		024E9588238D537C00DC2E9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,7 +40,6 @@
 		024E9595238D54A500DC2E9B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		024E9597238D54D600DC2E9B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		024E9599238D557D00DC2E9B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		024E959C238D590100DC2E9B /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		024E959E238D5A7800DC2E9B /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		024E95A0238D5AFE00DC2E9B /* HistorieTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorieTableCell.swift; sourceTree = "<group>"; };
 		024E95A2238D5B5D00DC2E9B /* HistoryOnrolledViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOnrolledViewController.swift; sourceTree = "<group>"; };
@@ -109,8 +107,7 @@
 				024E9590238D543F00DC2E9B /* LoginController.swift */,
 				024E9592238D547400DC2E9B /* SignupController.swift */,
 				024E9599238D557D00DC2E9B /* MenuViewController.swift */,
-				024E9580238D537800DC2E9B /* ViewController.swift */,
-				024E959C238D590100DC2E9B /* ChallengeViewController.swift */,
+				024E9580238D537800DC2E9B /*    ChallengeViewController.swift */,
 				024E959E238D5A7800DC2E9B /* CollectionViewController.swift */,
 				024E95A2238D5B5D00DC2E9B /* HistoryOnrolledViewController.swift */,
 				024E95A4238D5B8D00DC2E9B /* HistoryViewController.swift */,
@@ -190,8 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				024E9581238D537800DC2E9B /* ViewController.swift in Sources */,
-				024E959D238D590100DC2E9B /* ChallengeViewController.swift in Sources */,
+				024E9581238D537800DC2E9B /*    ChallengeViewController.swift in Sources */,
 				024E9591238D543F00DC2E9B /* LoginController.swift in Sources */,
 				024E957D238D537800DC2E9B /* AppDelegate.swift in Sources */,
 				024E95A9238D5C1200DC2E9B /* StepsViewController.swift in Sources */,
