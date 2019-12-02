@@ -10,6 +10,8 @@ import UIKit
 
 class LoginController: UIViewController {
     
+    // Dune: Email textfield created programmatically
+    
     let emailTextField: UITextField = {
        let e = UITextField()
         
@@ -23,7 +25,7 @@ class LoginController: UIViewController {
         return e
     }()
     
-    // Dune: Email textfield created programatically
+    // Dune: Password textfield created programmatically
     
     let passwordTextField: UITextField = {
         let p = UITextField()
@@ -132,7 +134,22 @@ class LoginController: UIViewController {
     
     @objc func loginAction() {
         let menuViewController = MenuViewController()
-        navigationController?.pushViewController(menuViewController, animated: true)
+        
+        // Dune: Validate textfields
+        if (emailTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)!
+        {
+            let alert = UIAlertController(title: "Required fields are empty", message: "You must fill out all fields to proceed.", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Got it!", style: .default, handler: nil))
+
+            self.present(alert, animated: true)
+            
+            return
+        } else {
+            navigationController?.pushViewController(menuViewController, animated: true)
+        }
+        
+        
     }
     
     // TODO: Set up logo initialisation
@@ -170,5 +187,6 @@ class LoginController: UIViewController {
             , leftPad: 12, right: view.rightAnchor, rightPad: -12, height: 30, width: 0)
 
     }
+    
 }
 
