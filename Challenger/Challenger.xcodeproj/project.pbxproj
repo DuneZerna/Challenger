@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024C33D92396CF290005B479 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024C33DB2396CF290005B479 /* Login.storyboard */; };
 		024E957D238D537800DC2E9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E957C238D537800DC2E9B /* AppDelegate.swift */; };
 		024E957F238D537800DC2E9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E957E238D537800DC2E9B /* SceneDelegate.swift */; };
 		024E9581238D537800DC2E9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E9580238D537800DC2E9B /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		024C33DA2396CF290005B479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		024E9579238D537800DC2E9B /* Challenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		024E957C238D537800DC2E9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		024E957E238D537800DC2E9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				024E957C238D537800DC2E9B /* AppDelegate.swift */,
 				024E957E238D537800DC2E9B /* SceneDelegate.swift */,
 				024E9582238D537800DC2E9B /* Main.storyboard */,
+				024C33DB2396CF290005B479 /* Login.storyboard */,
 				024E9585238D537C00DC2E9B /* Assets.xcassets */,
 				024E9587238D537C00DC2E9B /* LaunchScreen.storyboard */,
 				024E958A238D537C00DC2E9B /* Info.plist */,
@@ -180,6 +183,7 @@
 				024E9589238D537C00DC2E9B /* LaunchScreen.storyboard in Resources */,
 				024E9586238D537C00DC2E9B /* Assets.xcassets in Resources */,
 				024E9584238D537800DC2E9B /* Main.storyboard in Resources */,
+				024C33D92396CF290005B479 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +215,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		024C33DB2396CF290005B479 /* Login.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				024C33DA2396CF290005B479 /* Base */,
+			);
+			name = Login.storyboard;
+			sourceTree = "<group>";
+		};
 		024E9582238D537800DC2E9B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

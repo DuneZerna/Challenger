@@ -93,12 +93,15 @@ class LoginController: UIViewController {
         view.backgroundColor = WHITE_THEME
         
         navigationController?.isToolbarHidden = true
+    
         
+        /*
         setupAddLogo()
         setupTextFieldComponents()
         setupLoginButton()
         setupHaveAccountButton()
         setupForgotPasswordButton()
+         */
     }
     
     fileprivate func setupForgotPasswordButton() {

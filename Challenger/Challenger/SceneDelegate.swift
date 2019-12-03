@@ -20,17 +20,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         // Dune: Set to login screen programmatically
-        guard let winScene = (scene as? UIWindowScene) else { return }
+        //guard let winScene = (scene as? UIWindowScene) else { return }
         
         // Dune: Create the root view controller as needed
-        let vc = LoginController()
-        let nc = UINavigationController(rootViewController: vc)
+        //let vc = LoginController()
+        //let nc = UINavigationController(rootViewController: vc)
 
         // Dune: Create the window. Be sure to use this initializer and not the frame one.
-        let win = UIWindow(windowScene: winScene)
-        win.rootViewController = nc
-        win.makeKeyAndVisible()
-        window = win
+        //let win = UIWindow(windowScene: winScene)
+        //win.rootViewController = nc
+        //win.makeKeyAndVisible()
+        //window = win
+        
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginController")
+
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
