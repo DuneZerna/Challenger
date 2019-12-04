@@ -28,6 +28,9 @@ class MenuViewController: UIViewController {
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
     
     
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
 }

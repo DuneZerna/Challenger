@@ -1,5 +1,5 @@
 //
-//  SigninViewController.swift
+//  RegisterUserViewController.swift
 //  Challenger
 //
 //  Created by Dune Zerna on 04/12/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SigninViewController: UIViewController {
+class RegisterUserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,21 +16,33 @@ class SigninViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    @IBOutlet weak var usernameTextfield: UITextField!
+    
+    @IBOutlet weak var firstnameTextfield: UITextField!
+    
+    @IBOutlet weak var lastnameTextfield: UITextField!
+    
+    @IBOutlet weak var emailTextfield: UITextField!
     
     @IBOutlet weak var passwordTextfield: UITextField!
     
-    @IBAction func loginButton(_ sender: Any) {
-       let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
-        self.present(nextViewController, animated:true, completion:nil)
-     }
+    @IBOutlet weak var repeatPasswordTextfield: UITextField!
     
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        print("Cancel")
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func signupButtonTapped(_ sender: Any) {
+        print("Signup")
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
     /*
-     // MARK: - Navigation
+    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

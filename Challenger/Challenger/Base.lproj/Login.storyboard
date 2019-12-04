@@ -11,7 +11,7 @@
         <scene sceneID="ISm-Af-SU9">
             <objects>
                 <viewController storyboardIdentifier="LoginController" id="AJI-VS-g9j" customClass="SigninViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4Vi-Ww-kZv" customClass="login">
+                    <view key="view" contentMode="scaleToFill" id="4Vi-Ww-kZv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -45,6 +45,9 @@
                                 <state key="normal" title="Register new account">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="eFP-BN-Qsq" kind="show" id="wNv-eo-RM9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c14-GD-8nP">
                                 <rect key="frame" x="103" y="249" width="209.5" height="24"/>
@@ -86,65 +89,73 @@
             </objects>
             <point key="canvasLocation" x="189.85507246376812" y="-93.080357142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Register User View Controller-->
         <scene sceneID="4KE-02-J8r">
             <objects>
-                <viewController id="eFP-BN-Qsq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterUserViewController" id="eFP-BN-Qsq" customClass="RegisterUserViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EBB-hU-gta">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Register new account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkl-RX-IBx">
-                                <rect key="frame" x="20" y="75" width="374" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register new account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkl-RX-IBx">
+                                <rect key="frame" x="20" y="75" width="374" height="25.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="pbF-zO-E6e">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="pbF-zO-E6e">
                                 <rect key="frame" x="20" y="114" width="173" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="TZ5-x6-rgz">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="TZ5-x6-rgz">
                                 <rect key="frame" x="201" y="114" width="193" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email adress" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="d6w-aH-9YZ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email adress" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="d6w-aH-9YZ">
                                 <rect key="frame" x="20" y="156" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="MCh-hZ-wLV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="MCh-hZ-wLV">
                                 <rect key="frame" x="20" y="198" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="YEe-78-FBs">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="YEe-78-FBs">
                                 <rect key="frame" x="20" y="240" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rE7-7B-RnY">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rE7-7B-RnY">
                                 <rect key="frame" x="20" y="282" width="374" height="42"/>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="eFP-BN-Qsq" eventType="touchUpInside" id="j27-gD-eLl"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffy-NB-6EB">
-                                <rect key="frame" x="20" y="332" width="374" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffy-NB-6EB">
+                                <rect key="frame" x="20" y="332" width="374" height="38"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" title="Signup">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupButtonTapped:" destination="eFP-BN-Qsq" eventType="touchUpInside" id="I3E-gA-hYG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="MCh-hZ-wLV" firstAttribute="top" secondItem="Oh9-fc-GP8" secondAttribute="top" constant="198" id="2h1-G9-bv2"/>
                             <constraint firstItem="Oh9-fc-GP8" firstAttribute="trailing" secondItem="d6w-aH-9YZ" secondAttribute="trailing" constant="20" id="36Z-dF-iyo"/>
+                            <constraint firstItem="pbF-zO-E6e" firstAttribute="top" secondItem="Oh9-fc-GP8" secondAttribute="top" constant="114" id="6Jr-Xc-nRA"/>
                             <constraint firstItem="Oh9-fc-GP8" firstAttribute="trailing" secondItem="pbF-zO-E6e" secondAttribute="trailing" constant="221" id="6at-vm-9MJ"/>
                             <constraint firstItem="Oh9-fc-GP8" firstAttribute="trailing" secondItem="ffy-NB-6EB" secondAttribute="trailing" constant="20" id="75D-uv-aKs"/>
                             <constraint firstItem="TZ5-x6-rgz" firstAttribute="leading" secondItem="Oh9-fc-GP8" secondAttribute="leading" constant="201" id="AI6-Uw-3SY"/>
@@ -153,16 +164,30 @@
                             <constraint firstItem="Oh9-fc-GP8" firstAttribute="trailing" secondItem="rE7-7B-RnY" secondAttribute="trailing" constant="20" id="LH8-vB-aR1"/>
                             <constraint firstItem="rE7-7B-RnY" firstAttribute="leading" secondItem="Oh9-fc-GP8" secondAttribute="leading" constant="20" id="Nmh-he-V86"/>
                             <constraint firstItem="Oh9-fc-GP8" firstAttribute="trailing" secondItem="TZ5-x6-rgz" secondAttribute="trailing" constant="20" id="OV1-Ee-QmW"/>
+                            <constraint firstItem="TZ5-x6-rgz" firstAttribute="top" secondItem="Oh9-fc-GP8" secondAttribute="top" constant="114" id="QCO-rB-B3G"/>
+                            <constraint firstItem="YEe-78-FBs" firstAttribute="top" secondItem="Oh9-fc-GP8" secondAttribute="top" constant="240" id="TP9-2Y-lHC"/>
                             <constraint firstItem="pbF-zO-E6e" firstAttribute="leading" secondItem="Oh9-fc-GP8" secondAttribute="leading" constant="20" id="Ymf-0b-g4x"/>
                             <constraint firstItem="Oh9-fc-GP8" firstAttribute="trailing" secondItem="YEe-78-FBs" secondAttribute="trailing" constant="20" id="eqi-Iu-wnK"/>
                             <constraint firstItem="MCh-hZ-wLV" firstAttribute="leading" secondItem="Oh9-fc-GP8" secondAttribute="leading" constant="20" id="gVC-et-XMf"/>
                             <constraint firstItem="YEe-78-FBs" firstAttribute="leading" secondItem="Oh9-fc-GP8" secondAttribute="leading" constant="20" id="j3I-4t-nT5"/>
+                            <constraint firstItem="ffy-NB-6EB" firstAttribute="top" secondItem="Oh9-fc-GP8" secondAttribute="top" constant="332" id="lpQ-RB-Qv4"/>
                             <constraint firstItem="Oh9-fc-GP8" firstAttribute="trailing" secondItem="xkl-RX-IBx" secondAttribute="trailing" constant="20" id="tN6-E2-t0i"/>
                             <constraint firstItem="xkl-RX-IBx" firstAttribute="leading" secondItem="Oh9-fc-GP8" secondAttribute="leading" constant="20" id="x3g-Ez-FOV"/>
+                            <constraint firstItem="xkl-RX-IBx" firstAttribute="top" secondItem="Oh9-fc-GP8" secondAttribute="top" constant="75" id="x5S-8h-HFn"/>
+                            <constraint firstItem="rE7-7B-RnY" firstAttribute="top" secondItem="Oh9-fc-GP8" secondAttribute="top" constant="282" id="ywB-7D-yTS"/>
+                            <constraint firstItem="d6w-aH-9YZ" firstAttribute="top" secondItem="Oh9-fc-GP8" secondAttribute="top" constant="156" id="zEf-rb-HRX"/>
                             <constraint firstItem="d6w-aH-9YZ" firstAttribute="leading" secondItem="Oh9-fc-GP8" secondAttribute="leading" constant="20" id="zQR-2e-7wc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Oh9-fc-GP8"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aIG-ri-Sjr"/>
+                    <connections>
+                        <outlet property="emailTextfield" destination="d6w-aH-9YZ" id="fq4-XR-I0s"/>
+                        <outlet property="firstnameTextfield" destination="pbF-zO-E6e" id="kej-5l-8bi"/>
+                        <outlet property="lastnameTextfield" destination="TZ5-x6-rgz" id="J9N-Cc-GQM"/>
+                        <outlet property="passwordTextfield" destination="MCh-hZ-wLV" id="fKq-d1-oMx"/>
+                        <outlet property="repeatPasswordTextfield" destination="YEe-78-FBs" id="xvk-Xl-Crj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hq-xc-kJS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
