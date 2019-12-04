@@ -14,8 +14,12 @@ class SigninViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
 
+        
+
         // Do any additional setup after loading the view.
-    }
+    } 
+    
+    
 
     @IBOutlet weak var usernameTextfield: UITextField!
     
@@ -24,8 +28,23 @@ class SigninViewController: UIViewController {
     @IBAction func loginButton(_ sender: Any) {
        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
 
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
-        self.present(nextViewController, animated:true, completion:nil)
+        let username = UserDefaults.standard.string(forKey: "username") ?? ""
+        let password = UserDefaults.standard.string(forKey: "password") ?? ""
+
+        if (usernameTextfield.text?.isEmpty)! || (passwordTextfield.text?.isEmpty)! {
+            displayMessage(userMessage: "Please fill out all fields")
+        } else {
+            if ((passwordTextfield.text?.elementsEqual(password))! != true) || ((usernameTextfield.text?.elementsEqual(username))! != true){
+                displayMessage(userMessage: "Wrong credentials")
+                print("Username: " + username)
+                print("Password: " + password)
+            } else {
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
+                self.present(nextViewController, animated:true, completion:nil)
+            }
+        }
+
+
      }
     
     

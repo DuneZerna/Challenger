@@ -32,7 +32,6 @@ class MenuViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
 }
 
     

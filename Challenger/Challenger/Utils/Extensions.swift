@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 // Dune: Method for dismissing keyboard
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
@@ -19,6 +20,26 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+         func displayMessage(userMessage: String) -> Void {
+            DispatchQueue.main.async
+            {
+                let alertController = UIAlertController(title: "Caution", message: userMessage, preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "OK", style: .default) {
+                    (action: UIAlertAction!) in print("Alert message tapped")
+                    
+                    DispatchQueue.main.async
+                        {
+                       self.dismiss(animated: true, completion: nil)
+                    }
+                }
+                
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
+        }
 }
 
 
