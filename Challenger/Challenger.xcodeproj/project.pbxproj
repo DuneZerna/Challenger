@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		024C33D92396CF290005B479 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024C33DB2396CF290005B479 /* Login.storyboard */; };
+		024C33DE23972CE10005B479 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C33DD23972CE10005B479 /* LoginModel.swift */; };
+		024C33E023972FC00005B479 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C33DF23972FC00005B479 /* SigninViewController.swift */; };
 		024E957D238D537800DC2E9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E957C238D537800DC2E9B /* AppDelegate.swift */; };
 		024E957F238D537800DC2E9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E957E238D537800DC2E9B /* SceneDelegate.swift */; };
 		024E9581238D537800DC2E9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E9580238D537800DC2E9B /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		024C33DA2396CF290005B479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		024C33DD23972CE10005B479 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		024C33DF23972FC00005B479 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		024E9579238D537800DC2E9B /* Challenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		024E957C238D537800DC2E9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		024E957E238D537800DC2E9B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		024C33DC23972CC80005B479 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				024C33DD23972CE10005B479 /* LoginModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		024E9570238D537800DC2E9B = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +94,7 @@
 		024E957B238D537800DC2E9B /* Challenger */ = {
 			isa = PBXGroup;
 			children = (
+				024C33DC23972CC80005B479 /* Models */,
 				024E959B238D558900DC2E9B /* Controllers */,
 				024E9594238D548D00DC2E9B /* Utils */,
 				024E957C238D537800DC2E9B /* AppDelegate.swift */,
@@ -118,6 +131,7 @@
 				024E95A2238D5B5D00DC2E9B /* HistoryOnrolledViewController.swift */,
 				024E95A4238D5B8D00DC2E9B /* HistoryViewController.swift */,
 				024E95A8238D5C1200DC2E9B /* StepsViewController.swift */,
+				024C33DF23972FC00005B479 /* SigninViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,6 +213,7 @@
 				024E9591238D543F00DC2E9B /* LoginController.swift in Sources */,
 				024E957D238D537800DC2E9B /* AppDelegate.swift in Sources */,
 				024E95A9238D5C1200DC2E9B /* StepsViewController.swift in Sources */,
+				024C33DE23972CE10005B479 /* LoginModel.swift in Sources */,
 				024E95A5238D5B8D00DC2E9B /* HistoryViewController.swift in Sources */,
 				024E95A1238D5AFE00DC2E9B /* HistorieTableCell.swift in Sources */,
 				024E959F238D5A7800DC2E9B /* CollectionViewController.swift in Sources */,
@@ -206,6 +221,7 @@
 				024E9593238D547400DC2E9B /* SignupController.swift in Sources */,
 				024E957F238D537800DC2E9B /* SceneDelegate.swift in Sources */,
 				024E9596238D54A500DC2E9B /* Constants.swift in Sources */,
+				024C33E023972FC00005B479 /* SigninViewController.swift in Sources */,
 				024E95A7238D5BAF00DC2E9B /* MyCell.swift in Sources */,
 				024E9598238D54D600DC2E9B /* Extensions.swift in Sources */,
 				024E959A238D557D00DC2E9B /* MenuViewController.swift in Sources */,
