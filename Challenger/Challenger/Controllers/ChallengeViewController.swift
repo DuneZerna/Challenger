@@ -13,7 +13,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
 
-    let challenge = [" ","Run 5km","Walk 10k steps","Sleep 8 hours"]
+   var challenge = [" ","Run 5km","Walk 10k steps","Sleep 8 hours"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
@@ -47,6 +47,6 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
         // Dispose of any resources that can be recreated.
     }
     
-    
+
 }
 
