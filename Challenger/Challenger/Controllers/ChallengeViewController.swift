@@ -14,7 +14,6 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var pickerView: UIPickerView!
 
    var challenge = [" ","Run 5km","Walk 10k steps","Sleep 8 hours"]
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
