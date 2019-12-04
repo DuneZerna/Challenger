@@ -28,6 +28,8 @@
 		024E95A5238D5B8D00DC2E9B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E95A4238D5B8D00DC2E9B /* HistoryViewController.swift */; };
 		024E95A7238D5BAF00DC2E9B /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E95A6238D5BAF00DC2E9B /* MyCell.swift */; };
 		024E95A9238D5C1200DC2E9B /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E95A8238D5C1200DC2E9B /* StepsViewController.swift */; };
+		844580F623979E8D00D7F1B8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844580F523979E8D00D7F1B8 /* HealthKit.framework */; };
+		844580F82397A0E800D7F1B8 /* NewChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844580F72397A0E800D7F1B8 /* NewChallengeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,9 @@
 		024E95A4238D5B8D00DC2E9B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		024E95A6238D5BAF00DC2E9B /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 		024E95A8238D5C1200DC2E9B /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
+		844580F323979E8D00D7F1B8 /* Challenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Challenger.entitlements; sourceTree = "<group>"; };
+		844580F523979E8D00D7F1B8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		844580F72397A0E800D7F1B8 /* NewChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewChallengeViewController.swift; path = ../../../../../../.Trash/NewChallengeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844580F623979E8D00D7F1B8 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +86,7 @@
 			children = (
 				024E957B238D537800DC2E9B /* Challenger */,
 				024E957A238D537800DC2E9B /* Products */,
+				844580F423979E8D00D7F1B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +101,7 @@
 		024E957B238D537800DC2E9B /* Challenger */ = {
 			isa = PBXGroup;
 			children = (
+				844580F323979E8D00D7F1B8 /* Challenger.entitlements */,
 				024C33DC23972CC80005B479 /* Models */,
 				024E959B238D558900DC2E9B /* Controllers */,
 				024E9594238D548D00DC2E9B /* Utils */,
@@ -125,6 +133,7 @@
 				024E9590238D543F00DC2E9B /* LoginController.swift */,
 				024E9592238D547400DC2E9B /* SignupController.swift */,
 				024E9599238D557D00DC2E9B /* MenuViewController.swift */,
+				844580F72397A0E800D7F1B8 /* NewChallengeViewController.swift */,
 				024E9580238D537800DC2E9B /* ViewController.swift */,
 				024E959C238D590100DC2E9B /* ChallengeViewController.swift */,
 				024E959E238D5A7800DC2E9B /* CollectionViewController.swift */,
@@ -134,6 +143,14 @@
 				024C33DF23972FC00005B479 /* SigninViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		844580F423979E8D00D7F1B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				844580F523979E8D00D7F1B8 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +228,7 @@
 				024E9581238D537800DC2E9B /* ViewController.swift in Sources */,
 				024E959D238D590100DC2E9B /* ChallengeViewController.swift in Sources */,
 				024E9591238D543F00DC2E9B /* LoginController.swift in Sources */,
+				844580F82397A0E800D7F1B8 /* NewChallengeViewController.swift in Sources */,
 				024E957D238D537800DC2E9B /* AppDelegate.swift in Sources */,
 				024E95A9238D5C1200DC2E9B /* StepsViewController.swift in Sources */,
 				024C33DE23972CE10005B479 /* LoginModel.swift in Sources */,
@@ -376,14 +394,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Challenger/Challenger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9N6DQ4CHH6;
+				DEVELOPMENT_TEAM = 4JB27NFB78;
 				INFOPLIST_FILE = Challenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.Challenger;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.Challenger3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -394,14 +413,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Challenger/Challenger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9N6DQ4CHH6;
+				DEVELOPMENT_TEAM = 4JB27NFB78;
 				INFOPLIST_FILE = Challenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.Challenger;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.Challenger3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
