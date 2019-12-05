@@ -26,8 +26,9 @@ class MenuViewController: UIViewController {
         let u = UILabel()
         u.textColor = UIColor.rgb(r: 0, g: 0, b: 0)
         let username = UserDefaults.standard.string(forKey: "username") ?? ""
-        u.text = username
-        
+        u.text = "Welcome " + username + "!"
+        u.numberOfLines = 10
+
 //        let color = UIColor.rgb(r: 89, g: 156, b: 120)
 //        let font = UIFont.systemFont(ofSize: 16)
 //
@@ -43,10 +44,12 @@ class MenuViewController: UIViewController {
         return u
     }()
     
+    
+    
     fileprivate func setupUserProfile() {
         view.addSubview(userprofile)
         
-        userprofile.anchors(top: view.safeAreaLayoutGuide.topAnchor, topPad: 50, bottom: nil, bottomPad: 8, left: view.leftAnchor, leftPad: 190, right: view.rightAnchor, rightPad: -190, height: 20, width: 0)
+        userprofile.anchors(top: view.safeAreaLayoutGuide.topAnchor, topPad: 300, bottom: view.safeAreaLayoutGuide.bottomAnchor, bottomPad: -250, left: view.leftAnchor, leftPad: self.view.center.x * 0.75, right: view.rightAnchor, rightPad: 0, height: 200, width: 15000)
     }
     
     fileprivate func setupMenuView() {

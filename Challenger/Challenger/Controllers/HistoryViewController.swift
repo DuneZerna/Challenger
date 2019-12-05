@@ -10,8 +10,9 @@ import UIKit
 
  class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var userNewChallenge = UserDefaults.standard.string(forKey: "challenge") ?? ""
     
-    let challenges: [String] = ["First Challenge", "Second Challenge", "Third Challenge", "Fourth Challenge"]
+    var challenges: [String] = ["First custom challenge", "Second custom challenge"]
     let chDesc: [String] = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquet ligula ut quam pellentesque consectetur. Cras dui felis, fringilla quis mauris ac, tempus sodales nisi. In non quam rhoncus, dapibus.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet ornare augue, a interdum eros luctus id. Aenean laoreet scelerisque pulvinar. Donec mattis augue urna, eget aliquet urna elementum quis.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id aliquet nibh. Nunc convallis urna eget sapien venenatis feugiat. Proin non condimentum eros. Praesent at ante id risus rutrum facilisis.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non nisi risus. Aenean iaculis, lectus non finibus rutrum, erat turpis mollis ante, eget vestibulum nisi ligula et sapien. Aliquam nunc."]
     
     var indexNr = 0
@@ -20,6 +21,9 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = UIColor.white
+        
+        challenges.append(userNewChallenge)
+        
     }
 
      

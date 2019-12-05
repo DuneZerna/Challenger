@@ -15,10 +15,12 @@ class NewChallengeViewController: UIViewController {
     
     var newtext=""
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         newest.text=newtext
+        UserDefaults.standard.set(newtext, forKey: "challenge")
     }
     
 
