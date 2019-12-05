@@ -10,10 +10,15 @@ import UIKit
 
 class NewChallengeViewController: UIViewController {
 
+
+    @IBOutlet weak var newest: UILabel!
+    
+    var newtext=""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        newest.text=newtext
     }
     
 

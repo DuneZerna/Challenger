@@ -10,8 +10,13 @@ import UIKit
 
 class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate  {
 
+    
+    
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
+    
+    var text=""
 
    var challenge = [" ","Run 5km","Walk 10k steps","Sleep 8 hours"]
     func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -36,8 +41,9 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     override func viewDidLoad()
     {
+       
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func didReceiveMemoryWarning()
@@ -46,6 +52,15 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func Letsgo(_ sender: Any) {
+        self.text=textField.text!
+        performSegue(withIdentifier: "new", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as!NewChallengeViewController
+        vc.newtext = self.text
+   
+    
+    
 }
-
+}
