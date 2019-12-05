@@ -34,8 +34,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poh-Iw-riL">
+                                <rect key="frame" x="20" y="58" width="374" height="59"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyo-Hl-eO7">
+                                <rect key="frame" x="166" y="776" width="82" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="iMB-bN-qUK" eventType="touchUpInside" id="fBC-Z5-peS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cul-DN-dgV">
+                                <rect key="frame" x="20" y="194" width="374" height="60"/>
+                                <viewLayoutGuide key="safeArea" id="awm-pc-pPl"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="History">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="aMB-xQ-o44" kind="show" id="tKA-YT-VBm"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2U3-2Y-Fi0">
-                                <rect key="frame" x="113" y="244" width="188" height="60"/>
+                                <rect key="frame" x="100" y="125" width="214" height="59"/>
                                 <viewLayoutGuide key="safeArea" id="4fJ-CG-43j"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <state key="normal" title="Challenge">
@@ -45,63 +70,23 @@
                                     <segue destination="swK-pb-q8T" kind="show" id="VSR-m0-cbP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cul-DN-dgV">
-                                <rect key="frame" x="139" y="344" width="136" height="60"/>
-                                <viewLayoutGuide key="safeArea" id="ldy-Q0-L27"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <state key="normal" title="History">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="aMB-xQ-o44" kind="show" id="tKA-YT-VBm"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poh-Iw-riL">
-                                <rect key="frame" x="174" y="58" width="66" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyo-Hl-eO7">
-                                <rect key="frame" x="20" y="52" width="89" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Log out"/>
-                                <connections>
-                                    <action selector="logoutButtonTapped:" destination="iMB-bN-qUK" eventType="touchUpInside" id="fBC-Z5-peS"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xw-TF-znV">
-                                <rect key="frame" x="145" y="158" width="124" height="30"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="poh-Iw-riL" firstAttribute="top" secondItem="Yzh-g0-6yV" secondAttribute="top" constant="14" id="370-wb-KR6"/>
-                            <constraint firstItem="2U3-2Y-Fi0" firstAttribute="top" secondItem="Yzh-g0-6yV" secondAttribute="top" constant="200" id="ARr-fb-VxD"/>
-                            <constraint firstItem="5Xw-TF-znV" firstAttribute="top" secondItem="Yzh-g0-6yV" secondAttribute="top" constant="114" id="BId-vc-sv6"/>
-                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="trailing" secondItem="5Xw-TF-znV" secondAttribute="trailing" constant="145" id="BNJ-1d-Ig5"/>
-                            <constraint firstItem="Cul-DN-dgV" firstAttribute="leading" secondItem="Yzh-g0-6yV" secondAttribute="leading" constant="139" id="ByC-ws-OCD"/>
-                            <constraint firstItem="Vyo-Hl-eO7" firstAttribute="top" secondItem="Yzh-g0-6yV" secondAttribute="top" constant="8" id="DIy-DL-fK0"/>
-                            <constraint firstItem="Vyo-Hl-eO7" firstAttribute="top" secondItem="Yzh-g0-6yV" secondAttribute="top" constant="8" id="NDv-Hs-64E"/>
-                            <constraint firstItem="5Xw-TF-znV" firstAttribute="leading" secondItem="Yzh-g0-6yV" secondAttribute="leading" constant="145" id="NJk-qe-6bM"/>
-                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="trailing" secondItem="2U3-2Y-Fi0" secondAttribute="trailing" constant="113" id="Nqu-bq-doJ"/>
-                            <constraint firstItem="2U3-2Y-Fi0" firstAttribute="centerX" secondItem="Cul-DN-dgV" secondAttribute="centerX" id="OyA-F1-DlL"/>
-                            <constraint firstItem="poh-Iw-riL" firstAttribute="leading" secondItem="Vyo-Hl-eO7" secondAttribute="trailing" constant="65" id="QoW-5U-Sa4"/>
-                            <constraint firstItem="Vyo-Hl-eO7" firstAttribute="leading" secondItem="Yzh-g0-6yV" secondAttribute="leading" constant="20" id="Uct-j0-bAL"/>
-                            <constraint firstItem="Cul-DN-dgV" firstAttribute="centerX" secondItem="Yzh-g0-6yV" secondAttribute="centerX" id="ZOT-KS-7iT"/>
-                            <constraint firstItem="2U3-2Y-Fi0" firstAttribute="centerX" secondItem="Yzh-g0-6yV" secondAttribute="centerX" id="aU3-Ix-YMf"/>
-                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="bottom" secondItem="Vyo-Hl-eO7" secondAttribute="bottom" constant="768" id="dV8-eD-xAY"/>
-                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="bottom" secondItem="5Xw-TF-znV" secondAttribute="bottom" constant="674" id="dv5-fc-h20"/>
-                            <constraint firstItem="poh-Iw-riL" firstAttribute="leading" secondItem="Yzh-g0-6yV" secondAttribute="leading" constant="174" id="eqw-D2-mON"/>
-                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="trailing" secondItem="Vyo-Hl-eO7" secondAttribute="trailing" constant="305" id="flC-lb-1dt"/>
-                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="trailing" secondItem="poh-Iw-riL" secondAttribute="trailing" constant="174" id="n3J-jf-pim"/>
-                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="bottom" secondItem="poh-Iw-riL" secondAttribute="bottom" constant="774" id="o9p-MH-YNA"/>
-                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="trailing" secondItem="Cul-DN-dgV" secondAttribute="trailing" constant="139" id="qww-3Q-RHi"/>
-                            <constraint firstItem="Cul-DN-dgV" firstAttribute="top" secondItem="Yzh-g0-6yV" secondAttribute="top" constant="300" id="sn4-dd-TX4"/>
-                            <constraint firstItem="2U3-2Y-Fi0" firstAttribute="leading" secondItem="Yzh-g0-6yV" secondAttribute="leading" constant="113" id="uY6-Rd-TbP"/>
+                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="trailing" secondItem="Vyo-Hl-eO7" secondAttribute="trailing" constant="166" id="0ja-hh-mNV"/>
+                            <constraint firstItem="2U3-2Y-Fi0" firstAttribute="top" secondItem="Yzh-g0-6yV" secondAttribute="top" constant="81" id="AZN-UC-FFs"/>
+                            <constraint firstItem="Cul-DN-dgV" firstAttribute="top" secondItem="Yzh-g0-6yV" secondAttribute="top" constant="150" id="Ch5-nm-eJH"/>
+                            <constraint firstItem="poh-Iw-riL" firstAttribute="top" secondItem="Yzh-g0-6yV" secondAttribute="top" constant="14" id="DEF-Rs-LSe"/>
+                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="bottom" secondItem="Vyo-Hl-eO7" secondAttribute="bottom" constant="44" id="ECh-n2-UMW"/>
+                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="trailing" secondItem="poh-Iw-riL" secondAttribute="trailing" constant="20" id="FHz-uC-1j7"/>
+                            <constraint firstItem="Vyo-Hl-eO7" firstAttribute="leading" secondItem="Yzh-g0-6yV" secondAttribute="leading" constant="166" id="QPn-TN-tK5"/>
+                            <constraint firstItem="Cul-DN-dgV" firstAttribute="top" secondItem="2U3-2Y-Fi0" secondAttribute="bottom" constant="10" id="RDe-cg-Rco"/>
+                            <constraint firstItem="poh-Iw-riL" firstAttribute="leading" secondItem="Yzh-g0-6yV" secondAttribute="leading" constant="20" id="ZVC-cA-Kwm"/>
+                            <constraint firstItem="2U3-2Y-Fi0" firstAttribute="leading" secondItem="Yzh-g0-6yV" secondAttribute="leading" constant="100" id="cvi-D6-sap"/>
+                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="trailing" secondItem="2U3-2Y-Fi0" secondAttribute="trailing" constant="100" id="gRz-O6-HH5"/>
+                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="trailing" secondItem="Cul-DN-dgV" secondAttribute="trailing" constant="20" id="hgA-bn-ZxD"/>
+                            <constraint firstItem="Yzh-g0-6yV" firstAttribute="bottom" secondItem="poh-Iw-riL" secondAttribute="bottom" constant="745" id="iYI-yG-2pc"/>
+                            <constraint firstItem="Cul-DN-dgV" firstAttribute="leading" secondItem="Yzh-g0-6yV" secondAttribute="leading" constant="20" id="kkh-iQ-PhC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yzh-g0-6yV"/>
                     </view>
@@ -109,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t32-BN-vdq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2328" y="455"/>
+            <point key="canvasLocation" x="-2328.985507246377" y="454.6875"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="R1L-jm-Sfe">
