@@ -38,7 +38,6 @@ class RegisterUserViewController: UIViewController {
     
     @IBAction func signupButtonTapped(_ sender: Any) {
         print("Signup")
-        let defaults = UserDefaults.standard
         
         // Dune: Textfields validation
         if (firstnameTextfield.text?.isEmpty)! || (lastnameTextfield.text?.isEmpty)! || (emailTextfield.text?.isEmpty)! || (passwordTextfield.text?.isEmpty)! {
@@ -46,6 +45,8 @@ class RegisterUserViewController: UIViewController {
             displayMessage(userMessage: "All fields are required")
             
             return
+        } else if (emailTextfield.text?.isValidEmail() == false){
+            displayMessage(userMessage: "Damn fool, not a valid email")
         } else {
             
             if ((passwordTextfield.text?.elementsEqual(repeatPasswordTextfield.text!))! != true) {

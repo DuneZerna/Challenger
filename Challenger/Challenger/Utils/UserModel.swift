@@ -14,4 +14,3 @@ struct defaultsKeys {
     static let keyTwo = ""
     
 }
-
