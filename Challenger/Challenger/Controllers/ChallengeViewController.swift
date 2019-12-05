@@ -53,14 +53,18 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     @IBAction func Letsgo(_ sender: Any) {
+       
+        
         self.text=textField.text!
         performSegue(withIdentifier: "new", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as!NewChallengeViewController
+        
+        if (segue.identifier == "new") {
+var vc = segue.destination as!NewChallengeViewController
         vc.newtext = self.text
-   
-    
-    
+  }
 }
+    
+    
 }
