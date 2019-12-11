@@ -8,9 +8,24 @@
 
 import Foundation
 
-struct defaultsKeys {
+
+// Dune: User information
+struct userProfile {
     
-    static let keyOne = ""
-    static let keyTwo = ""
+    static let username = ""
+    static let password = ""
+    
+    func saveInfo(username: String, password: String){
+        UserDefaults.standard.set(username, forKey: "username")
+        UserDefaults.standard.set(password, forKey: "password")
+        
+    }
+}
+
+struct userChallenges {
+    
+    static let predefinedChallenges = [" ","Run 5KM","Walk 10K steps","Sleep 8 hours"]
+    static let challenges: [String] = []
+    static let description: [String] = [" ","Running is good for you. Let's try to run for 5KM"]
     
 }

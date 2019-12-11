@@ -18,7 +18,9 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     var text=""
 
-   var challenge = [" ","Run 5km","Walk 10k steps","Sleep 8 hours"]
+    // Dune: Get challenges string array from UserModel.swift
+    var challenge = userChallenges.predefinedChallenges
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
@@ -61,7 +63,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if (segue.identifier == "new") {
-var vc = segue.destination as!NewChallengeViewController
+            var vc = segue.destination as!NewChallengeViewController
         vc.newtext = self.text
   }
 }

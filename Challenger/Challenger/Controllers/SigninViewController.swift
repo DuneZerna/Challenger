@@ -17,7 +17,18 @@ class SigninViewController: UIViewController {
         
 
         // Do any additional setup after loading the view.
-    } 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        let alreadyLoggedBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        if (UserDefaults.standard.string(forKey: "username") != nil && UserDefaults.standard.string(forKey: "password") != nil){
+            print("Already logged")
+            let nextViewController = alreadyLoggedBoard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
+            self.present(nextViewController, animated:true, completion:nil)
+        }
+    }
     
     
 
