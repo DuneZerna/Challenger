@@ -38,6 +38,15 @@ class HistoryOnrolledViewController: UIViewController, UIImagePickerControllerDe
     @IBAction func savePhoto(_ sender: Any) {
         
         print("Photo saved")
+        let imageData = historyImage.image!.pngData()
+        let compressedImage = UIImage(data: imageData!)
+        
+        UIImageWriteToSavedPhotosAlbum(compressedImage!, nil, nil, nil)
+        
+        let alert = UIAlertController(title: "Saved", message: "Your image was saved", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
         
     }
     
