@@ -30,6 +30,7 @@
 		024E95A7238D5BAF00DC2E9B /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E95A6238D5BAF00DC2E9B /* MyCell.swift */; };
 		024E95A9238D5C1200DC2E9B /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E95A8238D5C1200DC2E9B /* StepsViewController.swift */; };
 		844580F623979E8D00D7F1B8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844580F523979E8D00D7F1B8 /* HealthKit.framework */; };
+		84891F6923A14ADA00C301F7 /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84891F6823A14ADA00C301F7 /* Challenge.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		024E95A8238D5C1200DC2E9B /* StepsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewController.swift; sourceTree = "<group>"; };
 		844580F323979E8D00D7F1B8 /* Challenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Challenger.entitlements; sourceTree = "<group>"; };
 		844580F523979E8D00D7F1B8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		84891F6823A14ADA00C301F7 /* Challenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,7 @@
 				024E9594238D548D00DC2E9B /* Utils */,
 				024E957C238D537800DC2E9B /* AppDelegate.swift */,
 				024E957E238D537800DC2E9B /* SceneDelegate.swift */,
-				024E9582238D537800DC2E9B /* Main.storyboard */,
+				84891F6723A14AAD00C301F7 /* Storyboards */,
 				024C33DB2396CF290005B479 /* Login.storyboard */,
 				024E9585238D537C00DC2E9B /* Assets.xcassets */,
 				024E9587238D537C00DC2E9B /* LaunchScreen.storyboard */,
@@ -143,6 +145,15 @@
 				844580F523979E8D00D7F1B8 /* HealthKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84891F6723A14AAD00C301F7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				024E9582238D537800DC2E9B /* Main.storyboard */,
+				84891F6823A14ADA00C301F7 /* Challenge.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84891F6923A14ADA00C301F7 /* Challenge.storyboard in Resources */,
 				024E9589238D537C00DC2E9B /* LaunchScreen.storyboard in Resources */,
 				024E9586238D537C00DC2E9B /* Assets.xcassets in Resources */,
 				024E9584238D537800DC2E9B /* Main.storyboard in Resources */,
