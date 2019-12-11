@@ -87,23 +87,6 @@ class HistoryOnrolledViewController: UIViewController, UIImagePickerControllerDe
         savePhoto.isHidden = false
         historyTakePhoto.isHidden = true
     }
-    
-    // SAVE IMAGE FUNCTION not working
-    
-    public func saveImage (imageName: String) {
-        print("saveImage")
-        let fileManager = FileManager.default
-        
-         let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) [0] as NSString).appendingPathComponent(imageName)
-        
-        let image = historyImage.image!
-        
-        let data = image.pngData()
-        
-        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
-        
-        print (imagePath)
-    }
     }
 
 extension UIViewController {
