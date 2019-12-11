@@ -21,16 +21,13 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = UIColor.white
-        
+        challenges.append(contentsOf: Challenge.challenges)
         //challenges.append(userNewChallenge)
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-        
-        challenges.append(contentsOf: Challenge.challenges)
-        chDesc.append(contentsOf: Challenge.description)
         
     }
 
@@ -48,9 +45,7 @@ import UIKit
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell") as! HistoryTableCell
-        
         cell.tableCell?.text = challenges[indexPath.row]
-        
         return cell
     }
     

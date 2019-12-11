@@ -20,7 +20,9 @@ class NewChallengeViewController: UIViewController {
         super.viewDidLoad()
 
         newest.text=newtext
+        
         Challenge.challenges.append(newtext)
+        Challenge.description.append("This is a description")
     }
     
 
