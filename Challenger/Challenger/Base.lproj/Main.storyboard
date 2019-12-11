@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QWa-kV-XlB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -185,6 +185,28 @@
                                 <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="E4B-zM-pow" customClass="HistoryTableCell" customModule="Challenger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E4B-zM-pow" id="G3S-It-Qrx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZh-Lo-9hv">
+                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tableCell" destination="tZh-Lo-9hv" id="qiJ-ty-OgJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="aMB-xQ-o44" id="Dnv-b5-WDV"/>
                                     <outlet property="delegate" destination="aMB-xQ-o44" id="5HO-SD-y19"/>
@@ -725,7 +747,7 @@
                                 </variation>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6T1-UL-SO0">
-                                <rect key="frame" x="95" y="254" width="0.0" height="162"/>
+                                <rect key="frame" x="95" y="254" width="241" height="162"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1477,6 +1499,10 @@
                                 <exclude reference="mTa-GP-lJz"/>
                                 <exclude reference="ytc-FQ-J0h"/>
                                 <exclude reference="zvG-Xm-9dX"/>
+                                <exclude reference="CtL-9s-Op4"/>
+                                <exclude reference="Np3-fj-NAU"/>
+                                <exclude reference="cSJ-0y-7Hu"/>
+                                <exclude reference="lNd-qz-jgS"/>
                                 <exclude reference="40S-JT-k6Y"/>
                                 <exclude reference="9ld-3P-HHc"/>
                                 <exclude reference="HHe-Wp-TcX"/>
@@ -1487,10 +1513,6 @@
                                 <exclude reference="pS0-A5-ptH"/>
                                 <exclude reference="rcd-6I-MMd"/>
                                 <exclude reference="s0L-w8-0Ua"/>
-                                <exclude reference="CtL-9s-Op4"/>
-                                <exclude reference="Np3-fj-NAU"/>
-                                <exclude reference="cSJ-0y-7Hu"/>
-                                <exclude reference="lNd-qz-jgS"/>
                                 <exclude reference="EGj-WW-W7c"/>
                                 <exclude reference="bV4-Vm-A3r"/>
                                 <exclude reference="gNA-TP-8kU"/>
@@ -1529,12 +1551,12 @@
                                 <include reference="d3f-2q-VwF"/>
                                 <include reference="gw9-aL-OTX"/>
                                 <include reference="hyN-jv-jAt"/>
+                                <include reference="Np3-fj-NAU"/>
+                                <include reference="lNd-qz-jgS"/>
                                 <include reference="40S-JT-k6Y"/>
                                 <include reference="yaM-zQ-uZt"/>
                                 <include reference="pS0-A5-ptH"/>
                                 <include reference="s0L-w8-0Ua"/>
-                                <include reference="Np3-fj-NAU"/>
-                                <include reference="lNd-qz-jgS"/>
                                 <include reference="nPr-QV-U40"/>
                                 <include reference="z9M-M4-3pw"/>
                                 <include reference="2se-Cw-jHO"/>
@@ -1558,14 +1580,14 @@
                                 <include reference="mTa-GP-lJz"/>
                                 <include reference="ytc-FQ-J0h"/>
                                 <include reference="zvG-Xm-9dX"/>
+                                <include reference="CtL-9s-Op4"/>
+                                <include reference="cSJ-0y-7Hu"/>
                                 <include reference="9ld-3P-HHc"/>
                                 <include reference="HHe-Wp-TcX"/>
                                 <include reference="HXy-Rn-TMq"/>
                                 <include reference="CPr-Pi-r0O"/>
                                 <include reference="MST-ap-A7g"/>
                                 <include reference="rcd-6I-MMd"/>
-                                <include reference="CtL-9s-Op4"/>
-                                <include reference="cSJ-0y-7Hu"/>
                                 <include reference="EGj-WW-W7c"/>
                                 <include reference="bV4-Vm-A3r"/>
                                 <include reference="gNA-TP-8kU"/>

@@ -19,7 +19,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     var text=""
 
     // Dune: Get challenges string array from UserModel.swift
-    var challenge = userChallenges.predefinedChallenges
+    var challenge = Challenge.predefinedChallenges
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {

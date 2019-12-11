@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0218494F23A10C2C007BE808 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218494E23A10C2C007BE808 /* Challenge.swift */; };
 		024C33D92396CF290005B479 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024C33DB2396CF290005B479 /* Login.storyboard */; };
 		024C33E023972FC00005B479 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C33DF23972FC00005B479 /* SigninViewController.swift */; };
 		024C33E22397A29E0005B479 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C33E12397A29E0005B479 /* RegisterUserViewController.swift */; };
@@ -23,7 +24,7 @@
 		024E959A238D557D00DC2E9B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E9599238D557D00DC2E9B /* MenuViewController.swift */; };
 		024E959D238D590100DC2E9B /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E959C238D590100DC2E9B /* ChallengeViewController.swift */; };
 		024E959F238D5A7800DC2E9B /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E959E238D5A7800DC2E9B /* CollectionViewController.swift */; };
-		024E95A1238D5AFE00DC2E9B /* HistorieTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E95A0238D5AFE00DC2E9B /* HistorieTableCell.swift */; };
+		024E95A1238D5AFE00DC2E9B /* HistoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E95A0238D5AFE00DC2E9B /* HistoryTableCell.swift */; };
 		024E95A3238D5B5D00DC2E9B /* HistoryOnrolledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E95A2238D5B5D00DC2E9B /* HistoryOnrolledViewController.swift */; };
 		024E95A5238D5B8D00DC2E9B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E95A4238D5B8D00DC2E9B /* HistoryViewController.swift */; };
 		024E95A7238D5BAF00DC2E9B /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E95A6238D5BAF00DC2E9B /* MyCell.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0218494E23A10C2C007BE808 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		024C33DA2396CF290005B479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		024C33DF23972FC00005B479 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		024C33E12397A29E0005B479 /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +52,7 @@
 		024E9599238D557D00DC2E9B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		024E959C238D590100DC2E9B /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		024E959E238D5A7800DC2E9B /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		024E95A0238D5AFE00DC2E9B /* HistorieTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorieTableCell.swift; sourceTree = "<group>"; };
+		024E95A0238D5AFE00DC2E9B /* HistoryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableCell.swift; sourceTree = "<group>"; };
 		024E95A2238D5B5D00DC2E9B /* HistoryOnrolledViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryOnrolledViewController.swift; sourceTree = "<group>"; };
 		024E95A4238D5B8D00DC2E9B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		024E95A6238D5BAF00DC2E9B /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
@@ -110,9 +112,10 @@
 			children = (
 				024E9595238D54A500DC2E9B /* Constants.swift */,
 				024E9597238D54D600DC2E9B /* Extensions.swift */,
-				024E95A0238D5AFE00DC2E9B /* HistorieTableCell.swift */,
+				024E95A0238D5AFE00DC2E9B /* HistoryTableCell.swift */,
 				024E95A6238D5BAF00DC2E9B /* MyCell.swift */,
 				024C33E52397C5090005B479 /* UserModel.swift */,
+				0218494E23A10C2C007BE808 /* Challenge.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -215,11 +218,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				024E9581238D537800DC2E9B /* ViewController.swift in Sources */,
+				0218494F23A10C2C007BE808 /* Challenge.swift in Sources */,
 				024E959D238D590100DC2E9B /* ChallengeViewController.swift in Sources */,
 				024E957D238D537800DC2E9B /* AppDelegate.swift in Sources */,
 				024E95A9238D5C1200DC2E9B /* StepsViewController.swift in Sources */,
 				024E95A5238D5B8D00DC2E9B /* HistoryViewController.swift in Sources */,
-				024E95A1238D5AFE00DC2E9B /* HistorieTableCell.swift in Sources */,
+				024E95A1238D5AFE00DC2E9B /* HistoryTableCell.swift in Sources */,
 				024E959F238D5A7800DC2E9B /* CollectionViewController.swift in Sources */,
 				024E95A3238D5B5D00DC2E9B /* HistoryOnrolledViewController.swift in Sources */,
 				024C33E22397A29E0005B479 /* RegisterUserViewController.swift in Sources */,

@@ -20,7 +20,7 @@ class NewChallengeViewController: UIViewController {
         super.viewDidLoad()
 
         newest.text=newtext
-        UserDefaults.standard.set(newtext, forKey: "challenge")
+        Challenge.challenges.append(newtext)
     }
     
 
