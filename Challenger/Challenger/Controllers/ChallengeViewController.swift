@@ -14,8 +14,9 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     var text=""
     
     // Diana: Gets predefinedChallenges string array from the Challenge class
-    var challenge = Challenge.predefinedChallenges
     var runningChallenges: [String] = Challenge.predefinedChallenges
+    var activeRunningChallenges: [String] = Challenge.activeChallenges
+    
     var indexNr = 0
     var stepCount = 0
     
@@ -51,19 +52,19 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        return challenge[row]
+        return runningChallenges[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        return challenge.count
+        return runningChallenges.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
         
         //Diana: appends the selected challenge from the menu to the a label
     {
-        label.text = "Challenge: "+challenge[row]
+        label.text = "Challenge: "+runningChallenges[row]
     }
     
     
@@ -75,9 +76,32 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     @IBAction func Letsgo(_ sender: Any) {
+        
+        print("Active: ",Challenge.activeChallenges)
        
         var challengeText = textField.text ?? ""
         let challengeInt = Int(challengeText) ?? 0
+        
+        for savedChallenge in Challenge.savedChallenges {
+                let savedChallengeInt = Int(savedChallenge) ?? 0
+                
+                
+                if Float(stepCount) >= Float(savedChallengeInt){
+                    
+                print("StepCount is larger")
+                }
+                
+                else {
+                    Challenge.activeChallenges.append(String(savedChallengeInt))
+                    print("I appended")
+                    
+                    print("Active:",Challenge.activeChallenges)
+                    
+                    print ("Challenge is larger")
+                }
+            }
+            
+        
         
         if challengeInt != 0 {
             let alert = UIAlertController(title: "Success", message: "Your challenge was created!", preferredStyle: .alert)
@@ -90,21 +114,26 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
             
             // Dune: Method for saving new challenges & descriptions
             saveChallenge(newChallenge: textField.text!)
-            saveDescription(newDescription: "No description yet..")
+            saveDescription(newDescription: "")
             print(Challenge.savedChallenges)
+            
         }
+        
         else {
             let alert = UIAlertController(title: "Error!", message: "You may only use numbers", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
+            
         }
+            
+            
         
         
         
         //Testing
         
-               if challengeInt >= stepCount {
+               if challengeInt <= stepCount {
                    print(challengeInt, stepCount, "Go you")
                }
         
@@ -116,13 +145,13 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     func tableView(_ runningTable: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return runningChallenges.count
+        return activeRunningChallenges.count
     }
     
     func tableView(_ runningTable: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = runningTable.dequeueReusableCell(withIdentifier: "runningCell") as! runningTableCell
-        cell.runningLabel?.text = runningChallenges[indexPath.row]
+        cell.runningLabel?.text = activeRunningChallenges[indexPath.row]
         return cell
     }
     
@@ -174,9 +203,11 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
           //Diana: hides the keyboard, when you a tap random place on the screen.
            super.viewDidLoad()
            self.hideKeyboardWhenTappedAround()
+        
+        
            createView.isHidden = false
            runningView.isHidden = true
-           runningChallenges.append(contentsOf: Challenge.challenges)
+        runningChallenges.append(contentsOf: Challenge.savedChallenges)
         
         if HKHealthStore.isHealthDataAvailable(){
             print("It's available!")

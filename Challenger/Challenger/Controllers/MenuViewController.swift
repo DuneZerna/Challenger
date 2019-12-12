@@ -12,7 +12,7 @@ import HealthKit
 class MenuViewController: UIViewController {
     
     
-//        let usernameID = UserDefaults.standard.string(forKey: "username") ?? ""
+    //        let usernameID = UserDefaults.standard.string(forKey: "username") ?? ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +20,15 @@ class MenuViewController: UIViewController {
         setupMenuView()
         setupUserProfile()
         
+
+        
     }
     
     let userprofile: UILabel = {
         let u = UILabel()
         u.textColor = UIColor.rgb(r: 0, g: 0, b: 0)
-        let username = UserDefaults.standard.string(forKey: "username") ?? ""
-        u.text = "Welcome " + username + "!"
+        let firstName = UserDefaults.standard.string(forKey: "firstName") ?? ""
+        u.text = "Welcome " + firstName + "!"
         u.numberOfLines = 10
 
 //        let color = UIColor.rgb(r: 89, g: 156, b: 120)
@@ -65,6 +67,8 @@ class MenuViewController: UIViewController {
     @IBAction func logoutButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
     
 //    @IBOutlet weak var username: UILabel!
     

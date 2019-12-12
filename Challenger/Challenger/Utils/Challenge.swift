@@ -18,5 +18,7 @@ class Challenge {
     static var savedChallenges: [String] = UserDefaults.standard.stringArray(forKey: "savedChallenges") ?? [""]
     static var savedDecriptions: [String] = UserDefaults.standard.stringArray(forKey: "savedDescriptions") ?? [""]
         static var totalSteps: String = ""
+    
+    static var activeChallenges: [String] = UserDefaults.standard.stringArray(forKey: "activeChallenges") ?? [""] 
 
 }
