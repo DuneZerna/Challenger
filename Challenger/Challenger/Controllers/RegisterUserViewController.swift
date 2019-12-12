@@ -52,35 +52,22 @@ class RegisterUserViewController: UIViewController {
             if ((passwordTextfield.text?.elementsEqual(repeatPasswordTextfield.text!))! != true) {
                 displayMessage(userMessage: "Password doesn't match homie")
             } else {
-//                defaults.set(emailTextfield.text, forKey: defaultsKeys.keyOne)
+                
+                saveInfo(username: emailTextfield.text ?? "", password: passwordTextfield.text ?? "", firstName: firstnameTextfield.text ?? "", lastName: lastnameTextfield.text ?? "", gender: userProfile.gender.man.returnGender())
                 UserDefaults.standard.set(emailTextfield.text, forKey: "username")
                 let username = UserDefaults.standard.string(forKey: "username") ?? ""
-//                let stringOne = defaults.string(forKey: defaultsKeys.keyOne)
-//                defaults.set(passwordTextfield.text, forKey: defaultsKeys.keyTwo)
                 UserDefaults.standard.set(passwordTextfield.text, forKey: "password")
                 let password = UserDefaults.standard.string(forKey: "password") ?? ""
-//                let stringTwo = defaults.string(forKey: defaultsKeys.keyTwo)
+
+                // Dune: Display profile info for testing purposes
+                displayMessage(userMessage: "Userprofile: \n" + "Username: " + username + "\n" + "Password: " + password)
                 
+                saveInfo(username: emailTextfield.text ?? "", password: passwordTextfield.text ?? "", firstName: firstnameTextfield.text ?? "", lastName: lastnameTextfield.text ?? "", gender: userProfile.gender.other.returnGender())
                 
-                
-                displayMessage(userMessage: "Userprofile: \n" + username + "\n" + password)
-                
+                print()
             }
             
         }
-        /*
-        // Dune: Password validation
-        if ((passwordTextfield.text?.elementsEqual(repeatPasswordTextfield.text!))! != true) {
-            
-            displayMessage(userMessage: "Password doesn't match homie")
-            
-            return
-        } else {
-            defaults.set(passwordTextfield.text, forKey: defaultsKeys.keyTwo)
-            
-        }
-        */
-        
         
         // Dune: Create activity indicator
         let myActivityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)

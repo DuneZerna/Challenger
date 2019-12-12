@@ -8,4 +8,6 @@
 
 import UIKit
 
+// Dune: White layout
+
 let WHITE_THEME = UIColor(displayP3Red: 255/255, green: 255 / 255, blue: 255 / 255, alpha: 1)

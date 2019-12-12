@@ -86,7 +86,12 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
             self.present(alert, animated: true, completion: nil)
             
             print("I succeeded")
-            Challenge.challenges.append(textField.text!)
+            //Challenge.challenges.append(textField.text!)
+            
+            // Dune: Method for saving new challenges & descriptions
+            saveChallenge(newChallenge: textField.text!)
+            saveDescription(newDescription: "No description yet..")
+            print(Challenge.savedChallenges)
         }
         else {
             let alert = UIAlertController(title: "Error!", message: "You may only use numbers", preferredStyle: .alert)

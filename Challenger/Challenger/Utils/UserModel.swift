@@ -12,12 +12,18 @@ import Foundation
 // Dune: User information
 struct userProfile {
     
-    static let username = ""
-    static let password = ""
-    
-    func saveInfo(username: String, password: String){
-        UserDefaults.standard.set(username, forKey: "username")
-        UserDefaults.standard.set(password, forKey: "password")
+    static let username = UserDefaults.standard.string(forKey: "username")
+    static let password = UserDefaults.standard.string(forKey: "password")
+    static let firstName = UserDefaults.standard.string(forKey: "firstName")
+    static let lastName = UserDefaults.standard.string(forKey: "lastName")
+    enum gender: String {
+        case man
+        case woman
+        case other
         
+        func returnGender() -> String {
+            return self.rawValue
+        }
     }
+
 }

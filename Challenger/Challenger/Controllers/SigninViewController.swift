@@ -19,10 +19,14 @@ class SigninViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Dune: Method that runs after the view is loaded and animated
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
+        
+        
         let alreadyLoggedBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
+        // Dune: Checks if there is already a login available
         if (UserDefaults.standard.string(forKey: "username") != nil && UserDefaults.standard.string(forKey: "password") != nil){
             print("Already logged")
             let nextViewController = alreadyLoggedBoard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
@@ -36,20 +40,24 @@ class SigninViewController: UIViewController {
     
     @IBOutlet weak var passwordTextfield: UITextField!
     
+    // Dune: Login function
     @IBAction func loginButton(_ sender: Any) {
        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
 
         let username = UserDefaults.standard.string(forKey: "username") ?? ""
         let password = UserDefaults.standard.string(forKey: "password") ?? ""
-
+        
+        // Dune: Textfield validation, if empty, deny entry
         if (usernameTextfield.text?.isEmpty)! || (passwordTextfield.text?.isEmpty)! {
             displayMessage(userMessage: "Please fill out all fields")
         } else {
+            // Dune: Login validation, if invalid, try again
             if ((passwordTextfield.text?.elementsEqual(password))! != true) || ((usernameTextfield.text?.elementsEqual(username))! != true){
                 displayMessage(userMessage: "Wrong credentials")
                 print("Username: " + username)
                 print("Password: " + password)
             } else {
+                // Dune: If valid, present next view
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
                 self.present(nextViewController, animated:true, completion:nil)
             }

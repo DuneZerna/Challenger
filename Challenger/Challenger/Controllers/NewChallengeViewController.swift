@@ -24,8 +24,9 @@ class NewChallengeViewController: UIViewController {
 
         newest.text=newtext
         
-        Challenge.challenges.append(newtext)
+        saveChallenge(newChallenge: newtext)
         Challenge.description.append("This is a description")
+        print(Challenge.savedChallenges)
     }
     
 

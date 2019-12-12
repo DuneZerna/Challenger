@@ -17,10 +17,10 @@ extension String {
     }
 }
 
-// Dune: Method for dismissing keyboard
+
 extension UIViewController {
     
-    
+    // Dune: Method for dismissing keyboard
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -30,8 +30,9 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-        // Dune: Method for user alerts
-         func displayMessage(userMessage: String) -> Void {
+    
+    // Dune: Method for user alerts
+    func displayMessage(userMessage: String) -> Void {
             DispatchQueue.main.async
             {
                 let alertController = UIAlertController(title: "Caution", message: userMessage, preferredStyle: .alert)
@@ -50,6 +51,36 @@ extension UIViewController {
             }
             
         }
+    
+    // Dune: Method for saving new challenges
+    func saveChallenge(newChallenge: String) -> Void{
+        Challenge.savedChallenges.append(newChallenge)
+        UserDefaults.standard.set(Challenge.savedChallenges, forKey: "savedChallenges")
+    }
+    
+    // Dune: Method for saving new descriptions
+    func saveDescription(newDescription: String) -> Void{
+        Challenge.savedDecriptions.append(newDescription)
+        UserDefaults.standard.set(Challenge.savedDecriptions, forKey: "savedDescriptions")
+    }
+    
+    // Dune: Method for saving user info
+    func saveInfo(username: String, password: String, firstName: String, lastName: String, gender: String){
+        let saveUsername = username
+        let savePassword = password
+        let saveFirstName = firstName
+        let saveLastName = lastName
+        let saveGender = gender
+        UserDefaults.standard.set(saveUsername, forKey: "username")
+        UserDefaults.standard.set(savePassword, forKey: "password")
+        UserDefaults.standard.set(saveFirstName, forKey: "firstName")
+        UserDefaults.standard.set(saveLastName, forKey: "lastName")
+        UserDefaults.standard.set(saveGender, forKey: "gender")
+        
+        func getInfo() -> (String, String, String, String, String){
+            return (saveUsername, savePassword, saveFirstName, saveLastName, saveGender)
+        }
+    }
 }
 
 

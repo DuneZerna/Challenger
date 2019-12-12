@@ -21,7 +21,8 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = UIColor.white
-        challenges.append(contentsOf: Challenge.challenges)
+        print(Challenge.savedChallenges)
+        challenges.append(contentsOf: Challenge.savedChallenges)
         //challenges.append(userNewChallenge)
         
     }
