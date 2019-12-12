@@ -7,20 +7,41 @@
 //
 
 import UIKit
+import HealthKit
 
-class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate  {
+class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource  {
 
+    var text=""
     
+    // Diana: Gets predefinedChallenges string array from the Challenge class
+    var challenge = Challenge.predefinedChallenges
+    var runningChallenges: [String] = Challenge.predefinedChallenges
+    var indexNr = 0
+    var stepCount = 0
+    
+    let healthStore = HKHealthStore()
+    
+    
+    @IBOutlet weak var createView: UIView!
+    @IBOutlet weak var runningView: UIView!
+    @IBOutlet weak var runningTable: UITableView!
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
-    
-    var text=""
 
-    // Diana: Gets predefinedChallenges string array from the Challenge class
-    var challenge = Challenge.predefinedChallenges
-    
+    @IBAction func createButton(_ sender: Any) {
+        
+        createView.isHidden = false
+        runningView.isHidden = true
+        
+    }
+    @IBAction func runningButton(_ sender: Any) {
+        runningView.isHidden = false
+        createView.isHidden = true
+        
+    }
+   
     
     //Diana: Making a picker menu from the predefinedChallenges in the Challenge class
     func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -45,12 +66,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
         label.text = "Challenge: "+challenge[row]
     }
     
-    override func viewDidLoad()
-    {
-       //Diana: hides the keyboard, when you a tap random place on the screen.
-        super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
-    }
+    
     
     override func didReceiveMemoryWarning()
     {
@@ -60,18 +76,124 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     @IBAction func Letsgo(_ sender: Any) {
        
-      // Diana: Sending the input from textfield to NewChallengeViewController, though a segue method.
+        var challengeText = textField.text ?? ""
+        let challengeInt = Int(challengeText) ?? 0
         
-        self.text=textField.text!
-        performSegue(withIdentifier: "new", sender: self)
+        if challengeInt != 0 {
+            let alert = UIAlertController(title: "Success", message: "Your challenge was created!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+            
+            print("I succeeded")
+            Challenge.challenges.append(textField.text!)
+        }
+        else {
+            let alert = UIAlertController(title: "Error!", message: "You may only use numbers", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        
+        
+        //Testing
+        
+               if challengeInt >= stepCount {
+                   print(challengeInt, stepCount, "Go you")
+               }
+        
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    func numberOfSections(in runningTable: UITableView) -> Int
+    {
+        return 1
+    }
+    
+    func tableView(_ runningTable: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return runningChallenges.count
+    }
+    
+    func tableView(_ runningTable: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if (segue.identifier == "new") {
-            var vc = segue.destination as!NewChallengeViewController
-        vc.newtext = self.text
-  }
+        let cell = runningTable.dequeueReusableCell(withIdentifier: "runningCell") as! runningTableCell
+        cell.runningLabel?.text = runningChallenges[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ runningTable: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+    }
+    
+    func getSteps(completion: @escaping (Double) -> Void){
+        let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
+        
+        let now = Date()
+        let startOfDay = Calendar.current.startOfDay(for: now)
+        var interval = DateComponents()
+        interval.day = 1
+        
+        let query = HKStatisticsCollectionQuery(
+            quantityType: stepsQuantityType, quantitySamplePredicate: nil, options: [.cumulativeSum], anchorDate: startOfDay, intervalComponents: interval)
+        
+        query.initialResultsHandler = {_, result, error in
+            var resultCount = 0.0
+            result!.enumerateStatistics(from: startOfDay, to: now) {
+                statistics, _ in
+                if let sum = statistics.sumQuantity(){
+                        resultCount = sum.doubleValue(for: HKUnit.count())
+                }
+            }
+            
+            DispatchQueue.main.async {
+                completion(resultCount)
+            }
+        }
+        
+        query.statisticsUpdateHandler = {
+            query, statistics, statisticsCollection, error in
+            
+            if let sum = statistics?.sumQuantity(){
+                let resultCount = sum.doubleValue(for: HKUnit.count())
+                
+                DispatchQueue.main.async {
+                    completion(resultCount)
+                }
+            }
+        }
+        healthStore.execute(query)
+    }
+    
+    override func viewDidLoad()
+       {
+          //Diana: hides the keyboard, when you a tap random place on the screen.
+           super.viewDidLoad()
+           self.hideKeyboardWhenTappedAround()
+           createView.isHidden = false
+           runningView.isHidden = true
+           runningChallenges.append(contentsOf: Challenge.challenges)
+        
+        if HKHealthStore.isHealthDataAvailable(){
+            print("It's available!")
+        } else {
+            print("It's not available")
+        }
+        let steps = Set([HKObjectType.quantityType(forIdentifier: .stepCount)!])
+
+        healthStore.requestAuthorization(toShare: steps, read: steps) { (success, error) in
+            if (success){
+                self.getSteps {(result) in
+                    
+                    DispatchQueue.main.async {
+                        self.stepCount = Int(result)
+                        print(self.stepCount)
+                        
+                    }
+                    
+                }
+            }
+        
+       }
+        
 }
-    
-    
 }
