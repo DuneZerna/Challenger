@@ -16,6 +16,9 @@ class NewChallengeViewController: UIViewController {
     var newtext=""
     
     
+    
+    //Diana: appends the input from the textfield in ChallengeViewController to "newtext"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

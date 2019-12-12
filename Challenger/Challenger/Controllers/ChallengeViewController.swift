@@ -18,9 +18,11 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     var text=""
 
-    // Dune: Get challenges string array from UserModel.swift
+    // Diana: Gets predefinedChallenges string array from the Challenge class
     var challenge = Challenge.predefinedChallenges
     
+    
+    //Diana: Making a picker menu from the predefinedChallenges in the Challenge class
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return 1
@@ -37,13 +39,15 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+        
+        //Diana: appends the selected challenge from the menu to the a label
     {
         label.text = "Challenge: "+challenge[row]
     }
     
     override func viewDidLoad()
     {
-       
+       //Diana: hides the keyboard, when you a tap random place on the screen.
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
     }
@@ -56,6 +60,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     @IBAction func Letsgo(_ sender: Any) {
        
+      // Diana: Sending the input from textfield to NewChallengeViewController, though a segue method.
         
         self.text=textField.text!
         performSegue(withIdentifier: "new", sender: self)
