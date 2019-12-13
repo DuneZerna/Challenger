@@ -13,10 +13,15 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     
     @IBOutlet weak var collectionViews: UICollectionView!
     
+    //Pernille: Tried making array of images, to append the taken images for.
+    // ERROR!!: Did not work. Help. 
+    var images: [UIImage] = []
+    
     let pictures: [String] = ["IMG_0792", "IMG_0793", "IMG_0794", "IMG_0795", "IMG_0796", "IMG_0797", "IMG_0800", "IMG_0818"]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        print(images.count)
         print(pictures.count)
         return pictures.count
     }

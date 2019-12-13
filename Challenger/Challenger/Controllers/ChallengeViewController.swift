@@ -14,13 +14,15 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     var text=""
     
     // Diana: Gets predefinedChallenges string array from the Challenge class
+    //Pernille: and activeChallenge
     var runningChallenges: [String] = Challenge.predefinedChallenges
     var activeRunningChallenges: [String] = Challenge.activeChallenges
     
     var indexNr = 0
-    var stepCount = 0
     
+    //Pernille: For stepCounter setup
     let healthStore = HKHealthStore()
+    var stepCount = 0
     
     
     @IBOutlet weak var createView: UIView!
@@ -31,6 +33,8 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
 
+    
+    //Pernille: Show and hide different views, dependent on button pressed
     @IBAction func createButton(_ sender: Any) {
         
         createView.isHidden = false
@@ -75,6 +79,8 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //Pernille: When button 'Letsgo' pressed: check if stepcount is less than challenge goal, and append to activeChallenges
     @IBAction func Letsgo(_ sender: Any) {
         
         print("Active: ",Challenge.activeChallenges)
@@ -102,7 +108,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
             }
             
         
-        
+        //Pernille: if you wrote only numbers in the textField, your challenge was created
         if challengeInt != 0 {
             let alert = UIAlertController(title: "Success", message: "Your challenge was created!", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
@@ -119,6 +125,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
             
         }
         
+            //Pernille: if you wrote letters in the textField, error occurs
         else {
             let alert = UIAlertController(title: "Error!", message: "You may only use numbers", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
@@ -126,19 +133,12 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
             self.present(alert, animated: true, completion: nil)
             
         }
-            
-            
-        
-        
-        
-        //Testing
-        
-               if challengeInt <= stepCount {
-                   print(challengeInt, stepCount, "Go you")
-               }
-        
     }
     
+    
+    //Pernille: setup of TableView in 'runningView'. Holds only activeChallenges
+    
+    //ERROR!!: The tableView does not update before a different viewController has been viewed! The last appended activeChallenge does not show either!
     func numberOfSections(in runningTable: UITableView) -> Int
     {
         return 1
@@ -159,6 +159,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
         cell.backgroundColor = UIColor.clear
     }
     
+    //Pernille: getting steps
     func getSteps(completion: @escaping (Double) -> Void){
         let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
         
@@ -204,11 +205,13 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
            super.viewDidLoad()
            self.hideKeyboardWhenTappedAround()
         
-        
+        //Pernille: first view to be shown is createView
            createView.isHidden = false
            runningView.isHidden = true
         runningChallenges.append(contentsOf: Challenge.savedChallenges)
         
+        
+        //Pernille: more steps
         if HKHealthStore.isHealthDataAvailable(){
             print("It's available!")
         } else {

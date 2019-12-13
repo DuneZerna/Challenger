@@ -19,6 +19,7 @@ class Challenge {
     static var savedDecriptions: [String] = UserDefaults.standard.stringArray(forKey: "savedDescriptions") ?? [""]
         static var totalSteps: String = ""
     
+    //Pernille: declared array of activeChallenges - this is set based on the steps registered on device vs the Challenge goal. If steps walked are less than Challenge goal, they're on the active list
     static var activeChallenges: [String] = UserDefaults.standard.stringArray(forKey: "activeChallenges") ?? [""] 
 
 }

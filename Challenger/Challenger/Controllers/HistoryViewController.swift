@@ -19,9 +19,10 @@ import UIKit
     @IBOutlet weak var tappedDescLabel: UILabel!
     
     @IBOutlet weak var historyImage: UIImageView!
-    
     var images: [UIImage] = []
     
+    //Pernille: camera setup, added to button
+    //ERROR!!: the same picture taken shows on EVERY tapview, NOT dependent on challenge
     @IBAction func takePhoto(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
                 imagePickerController.delegate = self
@@ -45,6 +46,7 @@ import UIKit
                 
             }
         
+    //Pernille: take image and show on screen
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
                 
                 
@@ -56,6 +58,7 @@ import UIKit
                 picker.dismiss(animated: true, completion: nil)
     }
     
+    //Pernille: save picture to device by button click
     @IBAction func savePhoto(_ sender: Any) {
         print("Photo saved")
             let imageData = historyImage.image!.pngData()
@@ -68,7 +71,10 @@ import UIKit
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
         
+        
+        //Pernille: tried appending to array. Does not work. Help.
         images.append(historyImage.image!)
+        print(images.count)
             
         }
     
@@ -77,6 +83,9 @@ import UIKit
         tappedView.isHidden = true
     }
     
+    
+    //Pernille: added textField to tappedView
+    //ERROR!!: tried appending to savedDescriptions, it did not work
     @IBAction func descSave(_ sender: Any) {
         
         let newDesc = tappedDescTextField.text!
@@ -88,6 +97,7 @@ import UIKit
         print("I'm newer", Challenge.savedDecriptions[indexNr])
         
     }
+    
     var challenges: [String] = Challenge.savedChallenges
     var chDesc: [String] = Challenge.description
     
@@ -112,7 +122,7 @@ import UIKit
     }
 
      
-
+//Pernille: creation of tableView in history
      func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1
@@ -134,13 +144,20 @@ import UIKit
         tappedView.isHidden = false
         print("Touched")
         
+        
+        //Pernille: using title and description for each challenge
         tappedTitleLabel.text = Challenge.savedChallenges[indexNr]
         
+        
+        //Pernille: checking if challenge has description
+        //ERROR!!: if not - I want it to save the textField input as the description of the challenge!
         if Challenge.savedDecriptions[indexNr] == "No description yet.." {
             
             tappedDescView.isHidden = true
             print("I'm empty")
             
+            
+            //Pernille: if has description, print description on label
         } else {
             
             tappedDescView.isHidden = false

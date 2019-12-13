@@ -11,7 +11,6 @@
 		024C33D92396CF290005B479 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024C33DB2396CF290005B479 /* Login.storyboard */; };
 		024C33E023972FC00005B479 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C33DF23972FC00005B479 /* SigninViewController.swift */; };
 		024C33E22397A29E0005B479 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C33E12397A29E0005B479 /* RegisterUserViewController.swift */; };
-		024C33E42397B4990005B479 /* NewChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C33E32397B4990005B479 /* NewChallengeViewController.swift */; };
 		024C33E62397C5090005B479 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C33E52397C5090005B479 /* UserModel.swift */; };
 		024E957D238D537800DC2E9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E957C238D537800DC2E9B /* AppDelegate.swift */; };
 		024E957F238D537800DC2E9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E957E238D537800DC2E9B /* SceneDelegate.swift */; };
@@ -38,7 +37,6 @@
 		024C33DA2396CF290005B479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		024C33DF23972FC00005B479 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		024C33E12397A29E0005B479 /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
-		024C33E32397B4990005B479 /* NewChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChallengeViewController.swift; sourceTree = "<group>"; };
 		024C33E52397C5090005B479 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		024E9579238D537800DC2E9B /* Challenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		024E957C238D537800DC2E9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				024E9599238D557D00DC2E9B /* MenuViewController.swift */,
-				024C33E32397B4990005B479 /* NewChallengeViewController.swift */,
 				024E9580238D537800DC2E9B /* ViewController.swift */,
 				024E959C238D590100DC2E9B /* ChallengeViewController.swift */,
 				024E959E238D5A7800DC2E9B /* CollectionViewController.swift */,
@@ -240,7 +237,6 @@
 				024E959F238D5A7800DC2E9B /* CollectionViewController.swift in Sources */,
 				024C33E22397A29E0005B479 /* RegisterUserViewController.swift in Sources */,
 				024E957F238D537800DC2E9B /* SceneDelegate.swift in Sources */,
-				024C33E42397B4990005B479 /* NewChallengeViewController.swift in Sources */,
 				024E9596238D54A500DC2E9B /* Constants.swift in Sources */,
 				024C33E023972FC00005B479 /* SigninViewController.swift in Sources */,
 				024C33E62397C5090005B479 /* UserModel.swift in Sources */,
