@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-3620" y="-238"/>
         </scene>
-        <!--Challenge View Controller-->
+        <!--Challenge-->
         <scene sceneID="dtL-pu-iow">
             <objects>
                 <viewController id="PdK-xR-0zT" customClass="ChallengeViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
@@ -284,14 +284,14 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="runningCell" id="34V-Oj-e9M" customClass="runningTableCell" customModule="Challenger" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                                <rect key="frame" x="0.0" y="28" width="375" height="42.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="34V-Oj-e9M" id="yJp-UL-gZB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="42.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4et-B4-hhR">
-                                                            <rect key="frame" x="15" y="11.000000000000002" width="352" height="21.666666666666671"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4et-B4-hhR">
+                                                            <rect key="frame" x="15" y="11" width="352" height="33.666666666666664"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>

@@ -47,6 +47,10 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
     }
    
+    @IBAction func menuButton(_ sender: Any) {
+        
+                self.dismiss(animated: true, completion: nil)
+    }
     
     //Diana: Making a picker menu from the predefinedChallenges in the Challenge class
     func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -151,6 +155,8 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     func tableView(_ runningTable: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = runningTable.dequeueReusableCell(withIdentifier: "runningCell") as! runningTableCell
+        
+        print("I'm creating")
         cell.runningLabel?.text = activeRunningChallenges[indexPath.row]
         return cell
     }
