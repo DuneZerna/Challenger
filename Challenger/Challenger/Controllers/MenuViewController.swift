@@ -77,6 +77,11 @@ class MenuViewController: UIViewController {
         
     }
     
+    @IBAction func cancel(_ unwindSegue: UIStoryboardSegue) {
+        
+        
+    }
+    
     
     
 //    @IBOutlet weak var username: UILabel!
