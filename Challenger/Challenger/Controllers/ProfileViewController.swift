@@ -37,6 +37,22 @@ class ProfileViewController: UIViewController {
     }
     
     
+    @IBAction func deleteData(_ sender: Any) {
+        let alert = UIAlertController(title: "Delete all data?", message: "This is an irreversible effect.", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            print("Deleting all data..")
+            let domain = Bundle.main.bundleIdentifier!
+            UserDefaults.standard.removePersistentDomain(forName: domain)
+            UserDefaults.standard.synchronize()
+            print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
+            exit(-1)
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
+    
     
     
     /*

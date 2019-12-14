@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-3620" y="-238"/>
         </scene>
-        <!--Challenge-->
+        <!--Challenge View Controller-->
         <scene sceneID="dtL-pu-iow">
             <objects>
                 <viewController id="PdK-xR-0zT" customClass="ChallengeViewController" customModule="Challenger" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,42 +31,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="6AG-wZ-r8O">
-                                <rect key="frame" x="286" y="234" width="264" height="2"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="2zV-5K-fPg"/>
-                                    <constraint firstAttribute="height" constant="2" id="CML-H5-ZC5"/>
-                                    <constraint firstAttribute="width" constant="189" id="fF4-5l-3mU"/>
-                                    <constraint firstAttribute="width" constant="264" id="kKP-Z8-w3o"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="2zV-5K-fPg"/>
-                                        <exclude reference="CML-H5-ZC5"/>
-                                        <exclude reference="fF4-5l-3mU"/>
-                                        <exclude reference="kKP-Z8-w3o"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="2zV-5K-fPg"/>
-                                        <include reference="fF4-5l-3mU"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="CML-H5-ZC5"/>
-                                        <include reference="kKP-Z8-w3o"/>
-                                    </mask>
-                                </variation>
-                            </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98n-0i-hun">
-                                <rect key="frame" x="249" y="144" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="runningButton:" destination="PdK-xR-0zT" eventType="touchUpInside" id="wED-yq-aH4"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phc-iB-juD">
                                 <rect key="frame" x="0.66666666666665719" y="239" width="374" height="395"/>
                                 <subviews>
@@ -284,14 +248,14 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="runningCell" id="34V-Oj-e9M" customClass="runningTableCell" customModule="Challenger" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="42.666667938232422"/>
+                                                <rect key="frame" x="0.0" y="28" width="375" height="43.333332061767578"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="34V-Oj-e9M" id="yJp-UL-gZB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="42.666667938232422"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.333332061767578"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4et-B4-hhR">
-                                                            <rect key="frame" x="15" y="11" width="352" height="33.666666666666664"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4et-B4-hhR">
+                                                            <rect key="frame" x="15" y="11" width="352" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -317,19 +281,56 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.89999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="6AG-wZ-r8O">
+                                <rect key="frame" x="286" y="234" width="264" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="2zV-5K-fPg"/>
+                                    <constraint firstAttribute="height" constant="2" id="CML-H5-ZC5"/>
+                                    <constraint firstAttribute="width" constant="189" id="fF4-5l-3mU"/>
+                                    <constraint firstAttribute="width" constant="264" id="kKP-Z8-w3o"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2zV-5K-fPg"/>
+                                        <exclude reference="CML-H5-ZC5"/>
+                                        <exclude reference="fF4-5l-3mU"/>
+                                        <exclude reference="kKP-Z8-w3o"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="2zV-5K-fPg"/>
+                                        <include reference="fF4-5l-3mU"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="CML-H5-ZC5"/>
+                                        <include reference="kKP-Z8-w3o"/>
+                                    </mask>
+                                </variation>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98n-0i-hun">
+                                <rect key="frame" x="311" y="143" width="48" height="30"/>
+                                <state key="normal" title="Recent"/>
+                                <connections>
+                                    <action selector="runningButton:" destination="PdK-xR-0zT" eventType="touchUpInside" id="wED-yq-aH4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ror-sz-FLf" firstAttribute="trailing" secondItem="98n-0i-hun" secondAttribute="trailing" constant="80" id="83U-C2-IRu"/>
                             <constraint firstItem="phc-iB-juD" firstAttribute="bottom" secondItem="FiE-Qs-g4b" secondAttribute="bottom" id="Fb1-7v-H8M"/>
+                            <constraint firstItem="98n-0i-hun" firstAttribute="leading" secondItem="Ror-sz-FLf" secondAttribute="leading" constant="311" id="MEP-Xo-qUK"/>
                             <constraint firstItem="phc-iB-juD" firstAttribute="trailing" secondItem="FiE-Qs-g4b" secondAttribute="trailing" id="Mpr-g6-xgZ"/>
-                            <constraint firstItem="phc-iB-juD" firstAttribute="top" secondItem="98n-0i-hun" secondAttribute="bottom" constant="65" id="NMu-pq-Uy6"/>
                             <constraint firstItem="Ror-sz-FLf" firstAttribute="bottom" secondItem="phc-iB-juD" secondAttribute="bottom" constant="144" id="NeH-he-ydi"/>
                             <constraint firstItem="phc-iB-juD" firstAttribute="top" secondItem="FiE-Qs-g4b" secondAttribute="top" id="Pa8-uJ-94x"/>
+                            <constraint firstItem="2H4-Ba-uw1" firstAttribute="top" secondItem="Ror-sz-FLf" secondAttribute="top" constant="56" id="b1l-bm-GR8"/>
+                            <constraint firstItem="Ror-sz-FLf" firstAttribute="trailing" secondItem="98n-0i-hun" secondAttribute="trailing" constant="16" id="dG6-q1-Ivp"/>
                             <constraint firstItem="phc-iB-juD" firstAttribute="centerX" secondItem="b99-iC-fbQ" secondAttribute="centerX" id="hOL-c9-DTP"/>
                             <constraint firstItem="phc-iB-juD" firstAttribute="top" secondItem="b99-iC-fbQ" secondAttribute="top" constant="239" id="lDK-gl-OJa"/>
                             <constraint firstItem="2H4-Ba-uw1" firstAttribute="leading" secondItem="b99-iC-fbQ" secondAttribute="leadingMargin" id="le8-G1-aK8"/>
-                            <constraint firstItem="98n-0i-hun" firstAttribute="baseline" secondItem="2H4-Ba-uw1" secondAttribute="baseline" id="v0i-BB-GwX"/>
+                            <constraint firstItem="98n-0i-hun" firstAttribute="top" secondItem="Ror-sz-FLf" secondAttribute="top" constant="55" id="s4w-2N-Krt"/>
                             <constraint firstItem="phc-iB-juD" firstAttribute="leading" secondItem="FiE-Qs-g4b" secondAttribute="leading" id="w1X-Ww-kJc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ror-sz-FLf"/>
@@ -345,7 +346,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="esU-d6-XPe">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="nXi-iz-wJa">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" style="plain" id="nXi-iz-wJa">
                             <connections>
                                 <segue destination="0hC-0W-xjT" kind="unwind" unwindAction="cancel:" id="lcx-yS-Q7b"/>
                             </connections>

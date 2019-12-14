@@ -244,14 +244,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZh-Lo-9hv">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZh-Lo-9hv">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="59"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="tZh-Lo-9hv" secondAttribute="bottom" id="AtI-xn-vKB"/>
+                                                <constraint firstItem="tZh-Lo-9hv" firstAttribute="top" secondItem="G3S-It-Qrx" secondAttribute="top" id="jor-sd-phB"/>
+                                                <constraint firstItem="tZh-Lo-9hv" firstAttribute="trailing" secondItem="G3S-It-Qrx" secondAttribute="trailingMargin" id="x1z-z0-606"/>
+                                                <constraint firstItem="tZh-Lo-9hv" firstAttribute="leading" secondItem="G3S-It-Qrx" secondAttribute="leadingMargin" id="xag-of-iFd"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="tableCell" destination="tZh-Lo-9hv" id="qiJ-ty-OgJ"/>
@@ -270,6 +275,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufE-V8-WqS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="897"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDU-KG-h6g">
+                                        <rect key="frame" x="14" y="507" width="392" height="122"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="122" id="N4v-rw-Kna"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="descSave:" destination="aMB-xQ-o44" eventType="touchUpInside" id="ehC-T9-CN4"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQg-AR-d44">
                                         <rect key="frame" x="358" y="96" width="48" height="55"/>
                                         <state key="normal" title="Cancel"/>
@@ -282,13 +298,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDU-KG-h6g">
-                                        <rect key="frame" x="14" y="583" width="34" height="30"/>
-                                        <state key="normal" title="Save"/>
-                                        <connections>
-                                            <action selector="descSave:" destination="aMB-xQ-o44" eventType="touchUpInside" id="ehC-T9-CN4"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUL-kz-WeB">
                                         <rect key="frame" x="8" y="471" width="398" height="243"/>
                                         <subviews>
@@ -344,6 +353,7 @@
                                     <constraint firstItem="QRP-z7-pNV" firstAttribute="top" secondItem="ufE-V8-WqS" secondAttribute="top" constant="398" id="2rB-hL-8v7"/>
                                     <constraint firstItem="QRP-z7-pNV" firstAttribute="leading" secondItem="ufE-V8-WqS" secondAttribute="leading" constant="16" id="7FF-kT-0n2"/>
                                     <constraint firstItem="aW3-AQ-mS4" firstAttribute="top" secondItem="QRP-z7-pNV" secondAttribute="bottom" constant="42" id="7YM-UH-M5c"/>
+                                    <constraint firstItem="TDU-KG-h6g" firstAttribute="top" secondItem="QRP-z7-pNV" secondAttribute="bottom" constant="8" symbolic="YES" id="85X-jQ-F98"/>
                                     <constraint firstItem="QRP-z7-pNV" firstAttribute="centerY" secondItem="ufE-V8-WqS" secondAttribute="centerY" id="8v7-7X-4g6"/>
                                     <constraint firstItem="QRP-z7-pNV" firstAttribute="top" secondItem="wwJ-Zc-tox" secondAttribute="top" id="Bhy-LP-nAA"/>
                                     <constraint firstAttribute="trailing" secondItem="QRP-z7-pNV" secondAttribute="trailing" id="CWo-Ar-cBG"/>
@@ -352,12 +362,12 @@
                                     <constraint firstItem="fUL-kz-WeB" firstAttribute="top" secondItem="wwJ-Zc-tox" secondAttribute="bottom" constant="43" id="O2U-eP-2ZH"/>
                                     <constraint firstItem="sR0-qJ-eeS" firstAttribute="top" secondItem="VQg-AR-d44" secondAttribute="bottom" constant="49" id="ThN-uz-1rW"/>
                                     <constraint firstItem="QRP-z7-pNV" firstAttribute="top" secondItem="sR0-qJ-eeS" secondAttribute="bottom" constant="8" id="V3X-Ox-VX2"/>
-                                    <constraint firstItem="TDU-KG-h6g" firstAttribute="leading" secondItem="ufE-V8-WqS" secondAttribute="leading" constant="14" id="X9E-iM-idI"/>
+                                    <constraint firstItem="TDU-KG-h6g" firstAttribute="trailing" secondItem="fUL-kz-WeB" secondAttribute="trailing" id="XLv-jn-cVM"/>
                                     <constraint firstItem="VQg-AR-d44" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ufE-V8-WqS" secondAttribute="leading" constant="20" symbolic="YES" id="aHx-cW-jPa"/>
                                     <constraint firstItem="sR0-qJ-eeS" firstAttribute="centerX" secondItem="fUL-kz-WeB" secondAttribute="centerX" id="bF5-rD-vvg"/>
+                                    <constraint firstItem="TDU-KG-h6g" firstAttribute="leading" secondItem="ufE-V8-WqS" secondAttribute="leading" constant="14" id="bMG-hh-Udp"/>
                                     <constraint firstItem="sR0-qJ-eeS" firstAttribute="centerY" secondItem="ZBS-KX-niG" secondAttribute="centerY" id="cWd-oq-VPx"/>
                                     <constraint firstItem="sR0-qJ-eeS" firstAttribute="centerX" secondItem="ZBS-KX-niG" secondAttribute="centerX" id="gOE-TV-agv"/>
-                                    <constraint firstItem="TDU-KG-h6g" firstAttribute="top" secondItem="QRP-z7-pNV" secondAttribute="bottom" constant="84" id="gj8-bq-ihB"/>
                                     <constraint firstAttribute="bottom" secondItem="fUL-kz-WeB" secondAttribute="bottom" constant="183" id="jJK-vS-zUQ"/>
                                     <constraint firstItem="sR0-qJ-eeS" firstAttribute="centerX" secondItem="aW3-AQ-mS4" secondAttribute="centerX" id="mvV-oA-Ead"/>
                                     <constraint firstItem="VQg-AR-d44" firstAttribute="trailing" secondItem="ufE-V8-WqS" secondAttribute="trailingMargin" id="nIQ-VV-psK"/>
@@ -365,7 +375,6 @@
                                     <constraint firstItem="sR0-qJ-eeS" firstAttribute="trailing" secondItem="wwJ-Zc-tox" secondAttribute="trailing" id="uxW-bL-6oS"/>
                                     <constraint firstItem="wwJ-Zc-tox" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ufE-V8-WqS" secondAttribute="leading" constant="20" symbolic="YES" id="wRT-gS-W5W"/>
                                     <constraint firstItem="VQg-AR-d44" firstAttribute="trailing" secondItem="fUL-kz-WeB" secondAttribute="trailing" id="wZA-F8-9VZ"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TDU-KG-h6g" secondAttribute="trailing" constant="20" symbolic="YES" id="xgy-RY-35N"/>
                                     <constraint firstItem="sR0-qJ-eeS" firstAttribute="leading" secondItem="ufE-V8-WqS" secondAttribute="leading" constant="87" id="y6F-dG-Zct"/>
                                 </constraints>
                             </view>

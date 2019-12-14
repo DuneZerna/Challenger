@@ -117,17 +117,39 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
         //Pernille: if you wrote only numbers in the textField, your challenge was created
         if challengeInt != 0 {
-            let alert = UIAlertController(title: "Success", message: "Your challenge was created!", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-            alert.addAction(okAction)
-            self.present(alert, animated: true, completion: nil)
+//            let alert = UIAlertController(title: "Success", message: "Your challenge was created!", preferredStyle: .alert)
+//            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+//            alert.addAction(okAction)
+//            self.present(alert, animated: true, completion: nil)
+            
+            // Dune: Option to save a description
+            
+            let descriptionAlert = UIAlertController(title: "Description", message: nil, preferredStyle: .alert)
+            descriptionAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+            descriptionAlert.addTextField(configurationHandler: { textField in
+                textField.placeholder = "Describe your challenge here..."
+            })
+
+            descriptionAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+
+                if let description = descriptionAlert.textFields?.first?.text {
+                    self.saveDescription(newDescription: description)
+                    print(Challenge.savedDescriptions)
+                } else {
+                    self.saveDescription(newDescription: "No description yet..")
+                    print(Challenge.savedDescriptions)
+                }
+            }))
+
+            self.present(descriptionAlert, animated: true)
             
             print("I succeeded")
             //Challenge.challenges.append(textField.text!)
             
             // Dune: Method for saving new challenges & descriptions
             saveChallenge(newChallenge: textField.text!)
-            saveDescription(newDescription: "")
+            //saveDescription(newDescription: "")
             print(Challenge.savedChallenges)
             
         }

@@ -92,7 +92,8 @@ import UIKit
         
         print("I'm new: ", newDesc)
         
-        Challenge.savedDescriptions[indexNr] = newDesc
+        // Method for saving descriptions
+        saveDescription(newDescription: newDesc)
         
         print("I'm newer", Challenge.savedDescriptions[indexNr])
         
