@@ -63,6 +63,7 @@ class SigninViewController: UIViewController {
 
      }
     
+    // Dune: Validates user session
     fileprivate func alreadyLoggedFunc(){
         print("Already logged")
         let alreadyLoggedBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

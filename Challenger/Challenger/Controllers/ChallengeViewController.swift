@@ -49,7 +49,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
    
     @IBAction func menuButton(_ sender: Any) {
         
-                self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     //Diana: Making a picker menu from the predefinedChallenges in the Challenge class
@@ -102,7 +102,10 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 }
                 
                 else {
-                    Challenge.activeChallenges.append(String(savedChallengeInt))
+//                    Challenge.activeChallenges.append(String(savedChallengeInt))
+                    
+                    // Dune: Method for saving active challenges.
+                    saveActiveChallenge(activeChallenge: String(savedChallengeInt))
                     print("I appended")
                     
                     print("Active:",Challenge.activeChallenges)
@@ -143,6 +146,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     //Pernille: setup of TableView in 'runningView'. Holds only activeChallenges
     
     //ERROR!!: The tableView does not update before a different viewController has been viewed! The last appended activeChallenge does not show either!
+    
     func numberOfSections(in runningTable: UITableView) -> Int
     {
         return 1
@@ -155,7 +159,6 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     func tableView(_ runningTable: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = runningTable.dequeueReusableCell(withIdentifier: "runningCell") as! runningTableCell
-        
         print("I'm creating")
         cell.runningLabel?.text = activeRunningChallenges[indexPath.row]
         return cell

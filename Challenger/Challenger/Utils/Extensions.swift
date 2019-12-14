@@ -75,8 +75,14 @@ extension UIViewController {
     
     // Dune: Method for saving new descriptions
     func saveDescription(newDescription: String) -> Void{
-        Challenge.savedDecriptions.append(newDescription)
-        UserDefaults.standard.set(Challenge.savedDecriptions, forKey: "savedDescriptions")
+        Challenge.savedDescriptions.append(newDescription)
+        UserDefaults.standard.set(Challenge.savedDescriptions, forKey: "savedDescriptions")
+    }
+    
+    // Dune: Method for saving active challenges
+    func saveActiveChallenge(activeChallenge: String) -> Void{
+        Challenge.activeChallenges.append(activeChallenge)
+        UserDefaults.standard.set(Challenge.activeChallenges, forKey: "savedActiveChallenges")
     }
     
     // Dune: Method for saving user info
