@@ -10,27 +10,24 @@ import UIKit
 
 class SigninViewController: UIViewController {
 
+    var alreadyLogged: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-
-        
 
         // Do any additional setup after loading the view.
     }
     
     // Dune: Method that runs after the view is loaded and animated
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(false)
         
-        
-        let alreadyLoggedBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
-        // Dune: Checks if there is already a login available
-        if (UserDefaults.standard.string(forKey: "username") != nil && UserDefaults.standard.string(forKey: "password") != nil){
-            print("Already logged")
-            let nextViewController = alreadyLoggedBoard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
-            self.present(nextViewController, animated:true, completion:nil)
+        super.viewDidAppear(true)
+                // Dune: Checks if there is already a login available
+        if (UserDefaults.standard.string(forKey: "username") != nil || UserDefaults.standard.string(forKey: "password") != nil){
+
+                alreadyLoggedFunc()
+            
         }
     }
     
@@ -65,6 +62,16 @@ class SigninViewController: UIViewController {
 
 
      }
+    
+    fileprivate func alreadyLoggedFunc(){
+        print("Already logged")
+        let alreadyLoggedBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = alreadyLoggedBoard.instantiateViewController(withIdentifier: "Root") as! NavigationViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+                     self.present(nextViewController, animated:true, completion:nil)
+        
+        
+    }
     
     
     /*

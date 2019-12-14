@@ -17,8 +17,10 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupMenuView()
-        setupUserProfile()
+        //setupMenuView()
+       // setupUserProfile()
+        
+        
         
 
         
@@ -54,18 +56,25 @@ class MenuViewController: UIViewController {
         userprofile.anchors(top: view.safeAreaLayoutGuide.topAnchor, topPad: 300, bottom: view.safeAreaLayoutGuide.bottomAnchor, bottomPad: -250, left: view.leftAnchor, leftPad: self.view.center.x * 0.75, right: view.rightAnchor, rightPad: 0, height: 200, width: 15000)
     }
     
-    fileprivate func setupMenuView() {
-        
-        let menuViewController = storyBoard.instantiateViewController(withIdentifier: "Menu")
-        self.present(menuViewController, animated:true, completion:nil)
-        
-    }
+//    fileprivate func setupMenuView() {
+//
+//        let menuViewController = storyBoard.instantiateViewController(withIdentifier: "Menu")
+//        self.present(menuViewController, animated:true, completion:nil)
+//
+//    }
     
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
     
+    let profileStoryboard: UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func profileButton(_ sender: Any) {
+        let profileViewController = profileStoryboard.instantiateViewController(withIdentifier: "ProfileView")
+        self.present(profileViewController, animated:true, completion:nil)
+        
     }
     
     

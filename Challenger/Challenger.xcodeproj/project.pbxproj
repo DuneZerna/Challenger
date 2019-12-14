@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0218494F23A10C2C007BE808 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218494E23A10C2C007BE808 /* Challenge.swift */; };
+		0218495123A26F1E007BE808 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0218495023A26F1E007BE808 /* Profile.storyboard */; };
+		0218495523A3B282007BE808 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218495423A3B282007BE808 /* ProfileViewController.swift */; };
+		0218495723A48D3A007BE808 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0218495623A48D3A007BE808 /* NavigationViewController.swift */; };
 		024C33D92396CF290005B479 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024C33DB2396CF290005B479 /* Login.storyboard */; };
 		024C33E023972FC00005B479 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C33DF23972FC00005B479 /* SigninViewController.swift */; };
 		024C33E22397A29E0005B479 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024C33E12397A29E0005B479 /* RegisterUserViewController.swift */; };
@@ -34,6 +37,9 @@
 
 /* Begin PBXFileReference section */
 		0218494E23A10C2C007BE808 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		0218495023A26F1E007BE808 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		0218495423A3B282007BE808 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0218495623A48D3A007BE808 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		024C33DA2396CF290005B479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		024C33DF23972FC00005B479 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		024C33E12397A29E0005B479 /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +138,8 @@
 				024E95A8238D5C1200DC2E9B /* StepsViewController.swift */,
 				024C33DF23972FC00005B479 /* SigninViewController.swift */,
 				024C33E12397A29E0005B479 /* RegisterUserViewController.swift */,
+				0218495423A3B282007BE808 /* ProfileViewController.swift */,
+				0218495623A48D3A007BE808 /* NavigationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -149,6 +157,7 @@
 			children = (
 				024E9582238D537800DC2E9B /* Main.storyboard */,
 				84891F6823A14ADA00C301F7 /* Challenge.storyboard */,
+				0218495023A26F1E007BE808 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -211,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0218495123A26F1E007BE808 /* Profile.storyboard in Resources */,
 				84891F6923A14ADA00C301F7 /* Challenge.storyboard in Resources */,
 				024E9589238D537C00DC2E9B /* LaunchScreen.storyboard in Resources */,
 				024E9586238D537C00DC2E9B /* Assets.xcassets in Resources */,
@@ -232,7 +242,9 @@
 				024E957D238D537800DC2E9B /* AppDelegate.swift in Sources */,
 				024E95A9238D5C1200DC2E9B /* StepsViewController.swift in Sources */,
 				024E95A5238D5B8D00DC2E9B /* HistoryViewController.swift in Sources */,
+				0218495523A3B282007BE808 /* ProfileViewController.swift in Sources */,
 				024E95A1238D5AFE00DC2E9B /* HistoryTableCell.swift in Sources */,
+				0218495723A48D3A007BE808 /* NavigationViewController.swift in Sources */,
 				6A972CA023A24012000C92A6 /* runningTableCell.swift in Sources */,
 				024E959F238D5A7800DC2E9B /* CollectionViewController.swift in Sources */,
 				024C33E22397A29E0005B479 /* RegisterUserViewController.swift in Sources */,

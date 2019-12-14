@@ -16,6 +16,7 @@ struct userProfile {
     static let password = UserDefaults.standard.string(forKey: "password")
     static let firstName = UserDefaults.standard.string(forKey: "firstName")
     static let lastName = UserDefaults.standard.string(forKey: "lastName")
+    static let userGender = UserDefaults.standard.string(forKey: "gender")
     enum gender: String {
         case man
         case woman
@@ -24,6 +25,7 @@ struct userProfile {
         func returnGender() -> String {
             return self.rawValue
         }
+        
     }
 
 }
