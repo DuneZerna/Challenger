@@ -129,12 +129,15 @@ import UIKit
     }
     
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return challenges.count
     }
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell") as! HistoryTableCell
+        
+        print("I'm creating")
         cell.tableCell?.text = challenges[indexPath.row]
         return cell
     }

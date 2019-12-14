@@ -237,26 +237,21 @@
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="E4B-zM-pow" customClass="HistoryTableCell" customModule="Challenger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="12"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="59" id="E4B-zM-pow" customClass="HistoryTableCell" customModule="Challenger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="59"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E4B-zM-pow" id="G3S-It-Qrx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="12"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZh-Lo-9hv">
-                                                    <rect key="frame" x="-332" y="0.0" width="0.0" height="21.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZh-Lo-9hv">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="59"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="tZh-Lo-9hv" secondAttribute="bottom" constant="-20.5" id="3ny-k1-o6M"/>
-                                                <constraint firstAttribute="trailing" secondItem="tZh-Lo-9hv" secondAttribute="trailing" constant="746" id="FSK-Pu-DJF"/>
-                                                <constraint firstItem="tZh-Lo-9hv" firstAttribute="top" secondItem="G3S-It-Qrx" secondAttribute="top" id="byx-xx-Lwb"/>
-                                                <constraint firstItem="tZh-Lo-9hv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="G3S-It-Qrx" secondAttribute="leadingMargin" id="uVS-TS-hwU"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="tableCell" destination="tZh-Lo-9hv" id="qiJ-ty-OgJ"/>
