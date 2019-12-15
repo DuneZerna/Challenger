@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="15G-QM-iBu">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -234,9 +234,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2H4-Ba-uw1">
                                 <rect key="frame" x="16" y="144" width="118" height="30"/>
-                                <state key="normal" title="Create Challenge">
-                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <state key="normal" title="Create Challenge"/>
                                 <connections>
                                     <action selector="createButton:" destination="PdK-xR-0zT" eventType="touchUpInside" id="1qY-bC-n6W"/>
                                 </connections>
@@ -250,14 +248,14 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="runningCell" id="34V-Oj-e9M" customClass="runningTableCell" customModule="Challenger" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                                <rect key="frame" x="0.0" y="28" width="375" height="43.333332061767578"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="34V-Oj-e9M" id="yJp-UL-gZB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.333332061767578"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4et-B4-hhR">
-                                                            <rect key="frame" x="15" y="11.000000000000002" width="352" height="21.666666666666671"/>
+                                                            <rect key="frame" x="15" y="11" width="352" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -355,8 +353,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="CreateColor" destination="2H4-Ba-uw1" id="OCa-23-l7m"/>
-                        <outlet property="RunningColor" destination="98n-0i-hun" id="Pid-C9-M5y"/>
                         <outlet property="createView" destination="phc-iB-juD" id="hGV-7S-5Qg"/>
                         <outlet property="label" destination="rFc-DQ-WJl" id="6KK-ch-HP0"/>
                         <outlet property="pickerView" destination="s0u-kr-KGe" id="A4i-zR-hAr"/>
