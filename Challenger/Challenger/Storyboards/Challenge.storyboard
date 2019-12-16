@@ -265,14 +265,14 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="runningCell" id="34V-Oj-e9M" customClass="runningTableCell" customModule="Challenger" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="43.333332061767578"/>
+                                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="34V-Oj-e9M" id="yJp-UL-gZB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.333332061767578"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4et-B4-hhR">
-                                                            <rect key="frame" x="15" y="10.999999999999998" width="352" height="21.333333333333329"/>
+                                                            <rect key="frame" x="15" y="11.000000000000002" width="352" height="21.666666666666671"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -377,6 +377,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="CreateColor" destination="2H4-Ba-uw1" id="7R6-B0-LgK"/>
+                        <outlet property="RunningColor" destination="98n-0i-hun" id="BJ7-y0-xAF"/>
                         <outlet property="createView" destination="phc-iB-juD" id="hGV-7S-5Qg"/>
                         <outlet property="label" destination="rFc-DQ-WJl" id="6KK-ch-HP0"/>
                         <outlet property="pickerView" destination="s0u-kr-KGe" id="A4i-zR-hAr"/>
