@@ -105,7 +105,9 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
 //                    Challenge.activeChallenges.append(String(savedChallengeInt))
                     
                     // Dune: Method for saving active challenges.
-                    saveActiveChallenge(activeChallenge: String(savedChallengeInt))
+                    //saveActiveChallenge(activeChallenge: String(savedChallengeInt))
+                    
+                    Challenge.activeChallenges.append(String(savedChallengeInt))
                     print("I appended")
                     
                     print("Active:",Challenge.activeChallenges)
@@ -175,7 +177,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     func tableView(_ runningTable: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activeRunningChallenges.count
+        return Challenge.activeChallenges.count
     }
     
     func tableView(_ runningTable: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
