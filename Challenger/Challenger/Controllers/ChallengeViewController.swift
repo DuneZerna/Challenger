@@ -106,7 +106,6 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
                     
                     // Dune: Method for saving active challenges.
                     saveActiveChallenge(activeChallenge: String(savedChallengeInt))
-                    saveChallenge(newChallenge: String(savedChallengeInt))
                     print("I appended")
                     
                     print("Active:",Challenge.activeChallenges)
@@ -149,7 +148,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
             //Challenge.challenges.append(textField.text!)
             
             // Dune: Method for saving new challenges & descriptions
-            // saveChallenge(newChallenge: textField.text!)
+            saveChallenge(newChallenge: textField.text!)
             //saveDescription(newDescription: "")
             print(Challenge.savedChallenges)
             
