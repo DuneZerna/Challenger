@@ -93,9 +93,15 @@ import UIKit
         print("I'm new: ", newDesc)
         
         // Method for saving descriptions
-        saveDescription(newDescription: newDesc)
+        //saveDescription(newDescription: newDesc)
+        
+        Challenge.savedDescriptions[indexNr].append(newDesc)
         
         print("I'm newer", Challenge.savedDescriptions[indexNr])
+        if Challenge.savedDescriptions[indexNr] != "" {
+            tappedDescView.isHidden = false
+            tappedDescLabel.text = Challenge.savedDescriptions[indexNr]
+        }
         
     }
     
@@ -155,10 +161,12 @@ import UIKit
         
         //Pernille: checking if challenge has description
         //ERROR!!: if not - I want it to save the textField input as the description of the challenge!
-        if Challenge.savedDescriptions[indexNr] == "No description yet.." {
+        if Challenge.savedDescriptions[indexNr] == "" {
             
             tappedDescView.isHidden = true
             print("I'm empty")
+            
+            
             
             
             //Pernille: if has description, print description on label
@@ -166,6 +174,7 @@ import UIKit
             
             tappedDescView.isHidden = false
             tappedDescLabel.text = Challenge.savedDescriptions[indexNr]
+            
             
             print("I'm not empty: ",Challenge.savedDescriptions[indexNr])
         }
