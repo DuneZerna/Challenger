@@ -60,19 +60,19 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        return runningChallenges[row]
+        return Challenge.predefinedChallenges[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        return runningChallenges.count
+        return Challenge.predefinedChallenges.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
         
         //Diana: appends the selected challenge from the menu to the a label
     {
-        label.text = "Challenge: "+runningChallenges[row]
+        label.text = "Challenge: "+Challenge.predefinedChallenges[row]
     }
     
     
