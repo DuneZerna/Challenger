@@ -32,7 +32,7 @@
 		024E95A9238D5C1200DC2E9B /* StepsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024E95A8238D5C1200DC2E9B /* StepsViewController.swift */; };
 		6A972CA023A24012000C92A6 /* runningTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A972C9F23A24012000C92A6 /* runningTableCell.swift */; };
 		844580F623979E8D00D7F1B8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844580F523979E8D00D7F1B8 /* HealthKit.framework */; };
-		84891F6923A14ADA00C301F7 /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84891F6823A14ADA00C301F7 /* Challenge.storyboard */; };
+		84BE0A9E23A7853D000AEF10 /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BE0A9D23A7853C000AEF10 /* Challenge.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +64,7 @@
 		6A972C9F23A24012000C92A6 /* runningTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = runningTableCell.swift; sourceTree = "<group>"; };
 		844580F323979E8D00D7F1B8 /* Challenger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Challenger.entitlements; sourceTree = "<group>"; };
 		844580F523979E8D00D7F1B8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		84891F6823A14ADA00C301F7 /* Challenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
+		84BE0A9D23A7853C000AEF10 /* Challenge.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +155,8 @@
 		84891F6723A14AAD00C301F7 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				84BE0A9D23A7853C000AEF10 /* Challenge.storyboard */,
 				024E9582238D537800DC2E9B /* Main.storyboard */,
-				84891F6823A14ADA00C301F7 /* Challenge.storyboard */,
 				0218495023A26F1E007BE808 /* Profile.storyboard */,
 			);
 			path = Storyboards;
@@ -220,8 +220,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BE0A9E23A7853D000AEF10 /* Challenge.storyboard in Resources */,
 				0218495123A26F1E007BE808 /* Profile.storyboard in Resources */,
-				84891F6923A14ADA00C301F7 /* Challenge.storyboard in Resources */,
 				024E9589238D537C00DC2E9B /* LaunchScreen.storyboard in Resources */,
 				024E9586238D537C00DC2E9B /* Assets.xcassets in Resources */,
 				024E9584238D537800DC2E9B /* Main.storyboard in Resources */,
@@ -408,13 +408,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Challenger/Challenger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L3U77N7PA9;
+				DEVELOPMENT_TEAM = 4JB27NFB78;
 				INFOPLIST_FILE = Challenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pernillemadsen.challenger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pernillemadsen.challenger1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -427,13 +427,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Challenger/Challenger.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L3U77N7PA9;
+				DEVELOPMENT_TEAM = 4JB27NFB78;
 				INFOPLIST_FILE = Challenger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pernillemadsen.challenger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pernillemadsen.challenger1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

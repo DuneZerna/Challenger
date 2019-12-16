@@ -98,14 +98,14 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
         //Diana: appends the selected challenge from the menu to the a label
     {
-        label.text = "Challenge: "+runningChallenges[row]
+        label.text = "Challenge: "+runningChallenges[row] + "steps"
     }
     
     
     
     override func didReceiveMemoryWarning()
     {
-        super.didReceiveMemoryWarning()
+       // super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
@@ -159,18 +159,55 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
 
             descriptionAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
 
+
+                
                 if let description = descriptionAlert.textFields?.first?.text {
                     self.saveDescription(newDescription: description)
                     print(Challenge.savedDescriptions)
+                    
+                                                        
+                    
+                    let ChallengeSuceesAlert = UIAlertController(title: "Your challenge was created!", message: nil, preferredStyle: .alert)
+                                     
+                                     ChallengeSuceesAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                                        
+                                   self.performSegue(withIdentifier: "vc", sender: self)
+                                      
+                                         self.present( ChallengeSuceesAlert, animated: true, completion: nil)
+
+                                
+                                     }))
+                              
+                    
+                    
+                    
                 } else {
                     self.saveDescription(newDescription: "No description yet..")
                     print(Challenge.savedDescriptions)
                 }
+                
+                
+                
             }))
-
             self.present(descriptionAlert, animated: true)
             
             print("I succeeded")
+            
+            
+            
+
+                func SucessAlert(){
+                 
+                           
+                           
+                           
+            }
+            
+            
+            
+            
+           
+            
             //Challenge.challenges.append(textField.text!)
             
             // Dune: Method for saving new challenges & descriptions

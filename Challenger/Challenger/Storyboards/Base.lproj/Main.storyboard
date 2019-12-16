@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dHB-3y-602">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -561,11 +561,6 @@ Click on a challenge, to see the discription or take a photo to the gallery </st
                             <constraint firstItem="ufE-V8-WqS" firstAttribute="leading" secondItem="mOX-Ob-jUg" secondAttribute="leading" id="zQH-ZZ-Cn8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e75-IZ-FGK"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="ufE-V8-WqS"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="History" id="hxs-aF-vq4"/>
                     <connections>
