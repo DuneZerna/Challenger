@@ -46,7 +46,7 @@ class ProfileViewController: UIViewController {
             UserDefaults.standard.removePersistentDomain(forName: domain)
             UserDefaults.standard.synchronize()
             print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
-            exit(-1 )
+            exit(-1)
         }))
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
         self.present(alert, animated: true)

@@ -85,18 +85,6 @@ extension UIViewController {
         UserDefaults.standard.set(Challenge.activeChallenges, forKey: "savedActiveChallenges")
     }
     
-    // Dune: Method for saving images
-    func saveImage(imageFile: UIImage, fileName: String) -> Void {
-        let dataFile = imageFile.pngData()
-        UserDefaults().set(dataFile, forKey: fileName)
-    }
-    
-    // Dune: Method for retrieving images
-    func getImage(fileName: String) -> Data {
-        let imageFile = UserDefaults.standard.object(forKey: fileName) as! Data
-        return imageFile
-    }
-    
     // Dune: Method for saving user info
     func saveInfo(username: String, password: String, firstName: String, lastName: String, gender: String){
         let saveUsername = username
