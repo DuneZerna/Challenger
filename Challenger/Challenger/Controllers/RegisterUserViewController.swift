@@ -53,7 +53,7 @@ class RegisterUserViewController: UIViewController {
                 displayMessage(userMessage: "Password doesn't match homie")
             } else {
                 
-                saveInfo(username: emailTextfield.text ?? "", password: passwordTextfield.text ?? "", firstName: firstnameTextfield.text ?? "", lastName: lastnameTextfield.text ?? "", gender: userProfile.gender.man.returnGender())
+                userProfile.saveInfo(username: emailTextfield.text ?? "", password: passwordTextfield.text ?? "", firstName: firstnameTextfield.text ?? "", lastName: lastnameTextfield.text ?? "", gender: userProfile.gender.man.returnGender())
                 UserDefaults.standard.set(emailTextfield.text, forKey: "username")
                 let username = UserDefaults.standard.string(forKey: "username") ?? ""
                 UserDefaults.standard.set(passwordTextfield.text, forKey: "password")
@@ -62,7 +62,7 @@ class RegisterUserViewController: UIViewController {
                 // Dune: Display profile info for testing purposes
                 displayMessage(userMessage: "Userprofile: \n" + "Username: " + username + "\n" + "Password: " + password)
                 
-                saveInfo(username: emailTextfield.text ?? "", password: passwordTextfield.text ?? "", firstName: firstnameTextfield.text ?? "", lastName: lastnameTextfield.text ?? "", gender: userProfile.gender.other.returnGender())
+                userProfile.saveInfo(username: emailTextfield.text ?? "", password: passwordTextfield.text ?? "", firstName: firstnameTextfield.text ?? "", lastName: lastnameTextfield.text ?? "", gender: userProfile.gender.other.returnGender())
                 
                 print()
             }

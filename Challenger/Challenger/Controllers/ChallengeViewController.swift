@@ -136,10 +136,10 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
                     descriptionAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
 
                         if let description = descriptionAlert.textFields?.first?.text {
-                            self.saveDescription(newDescription: description)
+                            Challenge.saveDescription(newDescription: description)
                             print(Challenge.savedDescriptions)
                         } else {
-                            self.saveDescription(newDescription: "No description yet..")
+                            Challenge.saveDescription(newDescription: "No description yet..")
                             print(Challenge.savedDescriptions)
                         }
                     }))
@@ -204,7 +204,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
                     descriptionAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
 
                         if let description = descriptionAlert.textFields?.first?.text {
-                            self.saveDescription(newDescription: description)
+                            Challenge.saveDescription(newDescription: description)
                             print(Challenge.savedDescriptions)
                             
                             
@@ -221,7 +221,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
                                               
                           
                         } else {
-                            self.saveDescription(newDescription: "No description yet..")
+                            Challenge.saveDescription(newDescription: "No description yet..")
                             print(Challenge.savedDescriptions)
                             
                         
@@ -236,7 +236,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
                     //Challenge.challenges.append(textField.text!)
                     
                     // Dune: Method for saving new challenges & descriptions
-                    saveChallenge(newChallenge: textField.text!)
+                    Challenge.saveChallenge(newChallenge: textField.text!)
                     //saveDescription(newDescription: "")
                     print(Challenge.savedChallenges)
                     

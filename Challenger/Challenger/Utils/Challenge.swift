@@ -26,5 +26,23 @@ class Challenge {
     
     //Pernille: declared array of activeChallenges - this is set based on the steps registered on device vs the Challenge goal. If steps walked are less than Challenge goal, they're on the active list
     static var activeChallenges: [String] = UserDefaults.standard.stringArray(forKey: "savedActiveChallenges") ?? [""]
+    
+    // Dune: Method for saving new challenges
+    static func saveChallenge(newChallenge: String) -> Void{
+        Challenge.savedChallenges.append(newChallenge)
+        UserDefaults.standard.set(Challenge.savedChallenges, forKey: "savedChallenges")
+    }
+    
+    // Dune: Method for saving new descriptions
+    static func saveDescription(newDescription: String) -> Void{
+        Challenge.savedDescriptions.append(newDescription)
+        UserDefaults.standard.set(Challenge.savedDescriptions, forKey: "savedDescriptions")
+    }
+    
+    // Dune: Method for saving active challenges
+    static func saveActiveChallenge(activeChallenge: String) -> Void{
+        Challenge.activeChallenges.append(activeChallenge)
+        UserDefaults.standard.set(Challenge.activeChallenges, forKey: "savedActiveChallenges")
+    }
 
 }

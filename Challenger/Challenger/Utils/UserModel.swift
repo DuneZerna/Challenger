@@ -27,5 +27,23 @@ struct userProfile {
         }
         
     }
+    
+    // Dune: Method for saving user info
+    static func saveInfo(username: String, password: String, firstName: String, lastName: String, gender: String){
+        let saveUsername = username
+        let savePassword = password
+        let saveFirstName = firstName
+        let saveLastName = lastName
+        let saveGender = gender
+        UserDefaults.standard.set(saveUsername, forKey: "username")
+        UserDefaults.standard.set(savePassword, forKey: "password")
+        UserDefaults.standard.set(saveFirstName, forKey: "firstName")
+        UserDefaults.standard.set(saveLastName, forKey: "lastName")
+        UserDefaults.standard.set(saveGender, forKey: "gender")
+        
+        func getInfo() -> (String, String, String, String, String){
+            return (saveUsername, savePassword, saveFirstName, saveLastName, saveGender)
+        }
+    }
 
 }

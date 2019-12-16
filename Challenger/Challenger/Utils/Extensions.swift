@@ -67,41 +67,25 @@ extension UIViewController {
             
         }
     
-    // Dune: Method for saving new challenges
-    func saveChallenge(newChallenge: String) -> Void{
-        Challenge.savedChallenges.append(newChallenge)
-        UserDefaults.standard.set(Challenge.savedChallenges, forKey: "savedChallenges")
-    }
+//    // Dune: Method for saving new challenges
+//    func saveChallenge(newChallenge: String) -> Void{
+//        Challenge.savedChallenges.append(newChallenge)
+//        UserDefaults.standard.set(Challenge.savedChallenges, forKey: "savedChallenges")
+//    }
+//    
+//    // Dune: Method for saving new descriptions
+//    func saveDescription(newDescription: String) -> Void{
+//        Challenge.savedDescriptions.append(newDescription)
+//        UserDefaults.standard.set(Challenge.savedDescriptions, forKey: "savedDescriptions")
+//    }
+//    
+//    // Dune: Method for saving active challenges
+//    func saveActiveChallenge(activeChallenge: String) -> Void{
+//        Challenge.activeChallenges.append(activeChallenge)
+//        UserDefaults.standard.set(Challenge.activeChallenges, forKey: "savedActiveChallenges")
+//    }
     
-    // Dune: Method for saving new descriptions
-    func saveDescription(newDescription: String) -> Void{
-        Challenge.savedDescriptions.append(newDescription)
-        UserDefaults.standard.set(Challenge.savedDescriptions, forKey: "savedDescriptions")
-    }
-    
-    // Dune: Method for saving active challenges
-    func saveActiveChallenge(activeChallenge: String) -> Void{
-        Challenge.activeChallenges.append(activeChallenge)
-        UserDefaults.standard.set(Challenge.activeChallenges, forKey: "savedActiveChallenges")
-    }
-    
-    // Dune: Method for saving user info
-    func saveInfo(username: String, password: String, firstName: String, lastName: String, gender: String){
-        let saveUsername = username
-        let savePassword = password
-        let saveFirstName = firstName
-        let saveLastName = lastName
-        let saveGender = gender
-        UserDefaults.standard.set(saveUsername, forKey: "username")
-        UserDefaults.standard.set(savePassword, forKey: "password")
-        UserDefaults.standard.set(saveFirstName, forKey: "firstName")
-        UserDefaults.standard.set(saveLastName, forKey: "lastName")
-        UserDefaults.standard.set(saveGender, forKey: "gender")
-        
-        func getInfo() -> (String, String, String, String, String){
-            return (saveUsername, savePassword, saveFirstName, saveLastName, saveGender)
-        }
-    }
+
 }
 
 
