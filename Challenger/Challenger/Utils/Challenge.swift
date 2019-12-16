@@ -12,7 +12,7 @@ import Foundation
 class Challenge {
     
         // Dune: Predefined challenge array
-        static var predefinedChallenges = [" ","Run 5KM","Walk 10K steps", "Walk backwards"]
+        static var predefinedChallenges = [" ","5000","10000", "20000"]
         static var challenges: [String] = []
     
         // Dune: Predefined descriptions

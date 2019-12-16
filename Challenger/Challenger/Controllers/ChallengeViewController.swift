@@ -19,6 +19,8 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     var activeRunningChallenges: [String] = Challenge.activeChallenges
     
     var indexNr = 0
+    var pickedView = ""
+    var pickedNr = 0
     
     //Pernille: For stepCounter setup
     let healthStore = HKHealthStore()
@@ -86,19 +88,26 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
-        return runningChallenges[row]
+        return Challenge.predefinedChallenges[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
-        return runningChallenges.count
+        return Challenge.predefinedChallenges.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
         
         //Diana: appends the selected challenge from the menu to the a label
     {
-        label.text = "Challenge: "+runningChallenges[row] + "steps"
+        label.text = "Challenge: "+Challenge.predefinedChallenges[row] + "steps"
+        if Challenge.predefinedChallenges[row] != "" {
+            print("Predefined is not empty")
+            pickedView = Challenge.predefinedChallenges[row]
+            pickedNr = 1
+        } else {
+            pickedNr = 0
+        }
     }
     
     
@@ -114,118 +123,117 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBAction func Letsgo(_ sender: Any) {
         
         print("Active: ",Challenge.activeChallenges)
-       
-        var challengeText = textField.text ?? ""
-        let challengeInt = Int(challengeText) ?? 0
-        
-        for savedChallenge in Challenge.savedChallenges {
-                let savedChallengeInt = Int(savedChallenge) ?? 0
+                let challengeText = textField.text ?? ""
+                let challengeInt = Int(challengeText) ?? 0
+                let pickedViewInt = Int(pickedView) ?? 0
                 
-                
-                if Float(stepCount) >= Float(savedChallengeInt){
+                if pickedNr == 1 {
+                    print("Picked: ",pickedView)
+                    let descriptionAlert = UIAlertController(title: "Description", message: nil, preferredStyle: .alert)
+                    descriptionAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                    descriptionAlert.addTextField(configurationHandler: {textField in textField.placeholder = "Describe your challenge here.."})
+                    descriptionAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+
+                        if let description = descriptionAlert.textFields?.first?.text {
+                            self.saveDescription(newDescription: description)
+                            print(Challenge.savedDescriptions)
+                        } else {
+                            self.saveDescription(newDescription: "No description yet..")
+                            print(Challenge.savedDescriptions)
+                        }
+                    }))
                     
-                print("StepCount is larger")
+                    self.present(descriptionAlert, animated: true)
+                    
+                    if Int(pickedViewInt) >= Int(stepCount) {
+                        Challenge.activeChallenges.append(pickedView)
+                        print ("Picked now: ",Challenge.activeChallenges)
+                        Challenge.savedChallenges.append(pickedView)
+                        
+                    } else {
+                        Challenge.savedChallenges.append(pickedView)
+                    }
+                    
+                    
                 }
                 
+                else if pickedNr == 0 {
+                    
+                for savedChallenge in Challenge.savedChallenges {
+                        let savedChallengeInt = Int(savedChallenge) ?? 0
+                        
+                        
+                        if Float(stepCount) >= Float(savedChallengeInt){
+                            
+                        print("StepCount is larger")
+                        }
+                        
+                        else {
+        //                    Challenge.activeChallenges.append(String(savedChallengeInt))
+                            
+                            // Dune: Method for saving active challenges.
+                            //saveActiveChallenge(activeChallenge: String(savedChallengeInt))
+                            
+                            Challenge.activeChallenges.append(String(savedChallengeInt))
+                            print("I appended")
+                            
+                            print("Active:",Challenge.activeChallenges)
+                            
+                            print ("Challenge is larger")
+                        }
+                    }
+                    
+                
+                //Pernille: if you wrote only numbers in the textField, your challenge was created
+                if challengeInt != 0 {
+        //            let alert = UIAlertController(title: "Success", message: "Your challenge was created!", preferredStyle: .alert)
+        //            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        //            alert.addAction(okAction)
+        //            self.present(alert, animated: true, completion: nil)
+                    
+                    // Dune: Option to save a description
+                    
+                    let descriptionAlert = UIAlertController(title: "Description", message: nil, preferredStyle: .alert)
+                    descriptionAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+                    descriptionAlert.addTextField(configurationHandler: { textField in
+                        textField.placeholder = "Describe your challenge here..."
+                    })
+
+                    descriptionAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+
+                        if let description = descriptionAlert.textFields?.first?.text {
+                            self.saveDescription(newDescription: description)
+                            print(Challenge.savedDescriptions)
+                        } else {
+                            self.saveDescription(newDescription: "No description yet..")
+                            print(Challenge.savedDescriptions)
+                        }
+                    }))
+
+                    self.present(descriptionAlert, animated: true)
+                    
+                    print("I succeeded")
+                    //Challenge.challenges.append(textField.text!)
+                    
+                    // Dune: Method for saving new challenges & descriptions
+                    saveChallenge(newChallenge: textField.text!)
+                    //saveDescription(newDescription: "")
+                    print(Challenge.savedChallenges)
+                    
+                }
+                
+                    //Pernille: if you wrote letters in the textField, error occurs
                 else {
-//                    Challenge.activeChallenges.append(String(savedChallengeInt))
+                    let alert = UIAlertController(title: "Error!", message: "You may only use numbers", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true, completion: nil)
                     
-                    // Dune: Method for saving active challenges.
-                    saveActiveChallenge(activeChallenge: String(savedChallengeInt))
-                    print("I appended")
-                    
-                    print("Active:",Challenge.activeChallenges)
-                    
-                    print ("Challenge is larger")
+                }
                 }
             }
             
-        
-        //Pernille: if you wrote only numbers in the textField, your challenge was created
-        if challengeInt != 0 {
-//            let alert = UIAlertController(title: "Success", message: "Your challenge was created!", preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-//            alert.addAction(okAction)
-//            self.present(alert, animated: true, completion: nil)
-            
-            // Dune: Option to save a description
-            
-            let descriptionAlert = UIAlertController(title: "Description", message: nil, preferredStyle: .alert)
-            descriptionAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-            descriptionAlert.addTextField(configurationHandler: { textField in
-                textField.placeholder = "Describe your challenge here..."
-            })
-
-            descriptionAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-
-
-                
-                if let description = descriptionAlert.textFields?.first?.text {
-                    self.saveDescription(newDescription: description)
-                    print(Challenge.savedDescriptions)
-                    
-                                                        
-                    
-                    let ChallengeSuceesAlert = UIAlertController(title: "Your challenge was created!", message: nil, preferredStyle: .alert)
-                                     
-                                     ChallengeSuceesAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                                        
-                                   self.performSegue(withIdentifier: "vc", sender: self)
-                                      
-                                         self.present( ChallengeSuceesAlert, animated: true, completion: nil)
-
-                                
-                                     }))
-                              
-                    
-                    
-                    
-                } else {
-                    self.saveDescription(newDescription: "No description yet..")
-                    print(Challenge.savedDescriptions)
-                }
-                
-                
-                
-            }))
-            self.present(descriptionAlert, animated: true)
-            
-            print("I succeeded")
-            
-            
-            
-
-                func SucessAlert(){
-                 
-                           
-                           
-                           
-            }
-            
-            
-            
-            
-           
-            
-            //Challenge.challenges.append(textField.text!)
-            
-            // Dune: Method for saving new challenges & descriptions
-            saveChallenge(newChallenge: textField.text!)
-            //saveDescription(newDescription: "")
-            print(Challenge.savedChallenges)
-            
-        }
-        
-            //Pernille: if you wrote letters in the textField, error occurs
-        else {
-            let alert = UIAlertController(title: "Error!", message: "You may only use numbers", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-            alert.addAction(okAction)
-            self.present(alert, animated: true, completion: nil)
-            
-        }
-    }
     
     
     //Pernille: setup of TableView in 'runningView'. Holds only activeChallenges
