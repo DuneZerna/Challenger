@@ -23,6 +23,16 @@
             </objects>
             <point key="canvasLocation" x="-3620" y="-238"/>
         </scene>
+        <!--Main-->
+        <scene sceneID="0Pw-DZ-tBF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="RIC-uC-7XE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="EAE-AO-C4L"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ea-fU-mNf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2823" y="-856"/>
+        </scene>
         <!--Challenge View Controller-->
         <scene sceneID="dtL-pu-iow">
             <objects>
@@ -324,6 +334,13 @@
                                     <action selector="runningButton:" destination="PdK-xR-0zT" eventType="touchUpInside" id="wED-yq-aH4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recent challenges that is not completed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNm-4E-5V5">
+                                <rect key="frame" x="16" y="193" width="343" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -343,7 +360,6 @@
                         <viewLayoutGuide key="safeArea" id="Ror-sz-FLf"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="FiE-Qs-g4b"/>
                                 <exclude reference="6AG-wZ-r8O"/>
                             </mask>
                         </variation>
@@ -361,12 +377,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="CreateColor" destination="2H4-Ba-uw1" id="pnc-Br-fUK"/>
+                        <outlet property="RunningColor" destination="98n-0i-hun" id="PZ5-lc-Xee"/>
                         <outlet property="createView" destination="phc-iB-juD" id="hGV-7S-5Qg"/>
                         <outlet property="label" destination="rFc-DQ-WJl" id="6KK-ch-HP0"/>
                         <outlet property="pickerView" destination="s0u-kr-KGe" id="A4i-zR-hAr"/>
                         <outlet property="runningTable" destination="g70-wN-AQj" id="QY5-Vy-Iem"/>
                         <outlet property="runningView" destination="FiE-Qs-g4b" id="RMG-Wa-dvd"/>
                         <outlet property="textField" destination="oNR-hI-1Yk" id="ukv-SN-kCo"/>
+                        <segue destination="RIC-uC-7XE" kind="show" identifier="vc" id="N1s-ZE-NvJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sON-Ju-p2w" sceneMemberID="firstResponder"/>

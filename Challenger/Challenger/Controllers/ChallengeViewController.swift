@@ -63,6 +63,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
 
         if runningView.isHidden != true {
         
+        
             RunningColor.setTitleColor(UIColor.gray, for: UIControl.State.normal)
                 
             CreateColor.setTitleColor(UIColor.blue, for: UIControl.State.normal)
@@ -205,14 +206,32 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
                         if let description = descriptionAlert.textFields?.first?.text {
                             self.saveDescription(newDescription: description)
                             print(Challenge.savedDescriptions)
+                            
+                            
+                //Diana: sucess alert and takes the user back to main menu 
+                               let alert = UIAlertController(title: "Success", message: "Your challenge was created!", preferredStyle: .alert)
+                            
+                                let okAction = UIAlertAction(title: "Okay", style: .default, handler: { [unowned self] (action: UIAlertAction!) in
+                                    
+                                    self.performSegue(withIdentifier: "vc", sender: self)
+                                })
+                                alert.addAction(okAction)
+                       
+                            self.present(alert, animated: true, completion: nil)
+                                              
+                          
                         } else {
                             self.saveDescription(newDescription: "No description yet..")
                             print(Challenge.savedDescriptions)
+                            
+                        
+                            
                         }
                     }))
-
-                    self.present(descriptionAlert, animated: true)
                     
+                    
+                    self.present(descriptionAlert, animated: true)
+                  
                     print("I succeeded")
                     //Challenge.challenges.append(textField.text!)
                     
