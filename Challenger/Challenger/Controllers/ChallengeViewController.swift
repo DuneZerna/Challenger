@@ -123,12 +123,12 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     //Pernille: When button 'Letsgo' pressed: check if stepcount is less than challenge goal, and append to activeChallenges
     @IBAction func Letsgo(_ sender: Any) {
         
-        
+        print("Active: ",Challenge.activeChallenges)
                 let challengeText = textField.text ?? ""
                 let challengeInt = Int(challengeText) ?? 0
                 let pickedViewInt = Int(pickedView) ?? 0
                 
-                if pickedNr == 1 && challengeText == "" {
+                if pickedNr == 1 {
                     print("Picked: ",pickedView)
                     let descriptionAlert = UIAlertController(title: "Description", message: nil, preferredStyle: .alert)
                     descriptionAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -158,13 +158,6 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
                     
                 }
                 
-                else if pickedNr == 1 && challengeText != "" {
-                    let alert = UIAlertController(title: "Error!", message: "Please, choose either predefined OR custom", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true, completion: nil)
-                }
-                    
                 else if pickedNr == 0 {
                     
                 for savedChallenge in Challenge.savedChallenges {
@@ -177,6 +170,7 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
                         }
                         
                         else {
+        //                    Challenge.activeChallenges.append(String(savedChallengeInt))
                             
                             // Dune: Method for saving active challenges.
                             //saveActiveChallenge(activeChallenge: String(savedChallengeInt))
@@ -193,6 +187,10 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 
                 //Pernille: if you wrote only numbers in the textField, your challenge was created
                 if challengeInt != 0 {
+        //            let alert = UIAlertController(title: "Success", message: "Your challenge was created!", preferredStyle: .alert)
+        //            let okAction = UIAlertAction(title: "Okay", style: .default, handler: nil)
+        //            alert.addAction(okAction)
+        //            self.present(alert, animated: true, completion: nil)
                     
                     // Dune: Option to save a description
                     
@@ -253,7 +251,6 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
                     
                 }
                 }
-        print("Active: ",Challenge.activeChallenges)
             }
             
     
