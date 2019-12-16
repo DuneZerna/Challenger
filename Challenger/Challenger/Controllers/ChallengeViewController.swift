@@ -29,8 +29,6 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var runningView: UIView!
     @IBOutlet weak var runningTable: UITableView!
     
-    @IBOutlet weak var RunningColor: UIButton!
-    @IBOutlet weak var CreateColor: UIButton!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -42,36 +40,12 @@ class ChallengeViewController: UIViewController, UIPickerViewDataSource, UIPicke
         createView.isHidden = false
         runningView.isHidden = true
         
-        if createView.isHidden != true {
-               
-                   CreateColor.setTitleColor(UIColor.gray, for: UIControl.State.normal)
-                       
-                   RunningColor.setTitleColor(UIColor.blue, for: UIControl.State.normal)
-               
-        } 
-        
-        
-        
-        
     }
     @IBAction func runningButton(_ sender: Any) {
         runningView.isHidden = false
         createView.isHidden = true
         
-
-        if runningView.isHidden != true {
-        
-            RunningColor.setTitleColor(UIColor.gray, for: UIControl.State.normal)
-                
-            CreateColor.setTitleColor(UIColor.blue, for: UIControl.State.normal)
-        
-        }
-        
-        
-        
     }
-    
-    
    
     @IBAction func menuButton(_ sender: Any) {
         
